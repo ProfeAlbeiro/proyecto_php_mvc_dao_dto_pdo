@@ -11,5 +11,15 @@
             require_once "views/modules/7_others/email.view.php";
             require_once "views/roles/admin/footer.php";
         }
+        public function calendar(){
+            require_once "views/roles/admin/header.php";
+            require_once "views/modules/7_others/calendar.view.php";
+            require_once "views/roles/admin/footer.php";
+        }
+        public function activities(){
+            require_once "views/roles/admin/header.php";
+            require_once "views/modules/7_others/activities.view.php";
+            require_once "views/roles/admin/footer.php";
+        }
     }
 ?>

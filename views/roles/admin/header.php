@@ -48,13 +48,13 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link ocul-navbar" href="modules/7_others/calendar.html" target="area_trabajo">
+								<a class="nav-link ocul-navbar" href="?c=Dashboard&a=calendar">
 									<i class="fa-solid fa-calendar-days"></i>
 									Calendario
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link ocul-navbar" href="modules/7_others/activities.html" target="area_trabajo">
+								<a class="nav-link ocul-navbar" href="?c=Dashboard&a=activities">
 									<i class="fa-solid fa-list-check"></i>
 									Actividades
 								</a>
@@ -70,7 +70,7 @@
 								<div class="dropdown-menu  dropdown-menu-right">
 									<a class="dropdown-item ocul-navbar" href="modules/1_users/user_config.html" target="area_trabajo">Configuración</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item ocul-navbar" href="index.html">Cerrar Sesión</a>
+									<a class="dropdown-item ocul-navbar" href="?c=Logout">Cerrar Sesión</a>
 								</div>
 							</li>
 						</ul>
@@ -112,9 +112,7 @@
 									<div class="card">
 										<ul class="list-group list-group-flush">
 											<li class="list-group-item p-0 bg-light">
-												<a href="modules/1_users/user_create.html" target="area_trabajo"
-													target="area_trabajo"
-													class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear
+												<a href="?c=Users&a=create" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear
 													Usuario</a>
 											</li>
 											<li class="list-group-item p-0 bg-light">
