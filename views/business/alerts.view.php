@@ -3,9 +3,9 @@
 			<h1>Alertas</h1>
 		</div>
 		<div class="migas color-gris-oscuro">
-			<a href="../index.html#portafolio">Portafolio</a>
+			<a href="?c=Landing#portafolio">Portafolio</a>
 			<p> &nbsp / &nbsp</p>
-			<a href="alerts.html">Alertas</a>
+			<a href="?c=Landing&a=alerts">Alertas</a>
 		</div>
 		<section class="paginas">
 			<h3 class="subtitulo">Plugin para Alertas con JS: SweetAlert</h3>

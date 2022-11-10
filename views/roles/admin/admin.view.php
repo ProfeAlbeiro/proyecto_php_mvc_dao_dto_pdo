@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sistema de Información</title>
-	<link rel="shortcut icon" href="img/css.png">
-	<link rel="stylesheet" href="css/all.min.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/styles-dashboard-bootstrap4.css">	
+	<link rel="shortcut icon" href="assets/img/css.png">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/styles-dashboard-bootstrap4.css">	
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 			<!-- Logo -->
 			<div
 				class="logo row col-lg-3 d-flex align-items-center justify-content-center bg-light border-right border-bottom">
-				<img src="img/logo_sistema.png" class="text-center" alt="Logo">
+				<img src="assets/img/logo_sistema.png" class="text-center" alt="Logo">
 			</div>
 			<!-- Menú -->
 			<div class="menu row col-lg-9 p-0 d-flex align-items-center bg-dark">
@@ -84,7 +84,7 @@
 			<aside id="panel-lateral" class="col-12 col-lg-3 p-0 bg-light">
 				<div id="config" class="config row d-flex justify-content-center p-2 py-lg-4">
 					<div id="config-img" class="col-5 row p-lg-1 p-1 d-flex flex-column align-items-center justify-content-center bg-secondary rounded">
-						<img src="img/usuario.png" class="p-0 bg-white rounded" alt="">
+						<img src="assets/img/usuario.png" class="p-0 bg-white rounded" alt="">
 					</div>
 					<div id="config-text"
 						class="col-7 p-3 d-flex flex-column justify-content-center font-weight-bold bg-light">
@@ -318,10 +318,10 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/jquery.slim.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/scripts-dash.js"></script>
+	<script src="assets/js/jquery.slim.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/scripts-dash.js"></script>
 </body>
 
 </html>
