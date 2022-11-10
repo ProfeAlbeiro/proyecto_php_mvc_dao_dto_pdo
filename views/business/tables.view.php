@@ -3,9 +3,9 @@
 			<h1>Tablas</h1>
 		</div>
 		<div class="migas color-gris-oscuro">
-			<a href="../index.html#portafolio">Portafolio</a>
+			<a href="?c=Landing#portafolio">Portafolio</a>
 			<p> &nbsp / &nbsp</p>
-			<a href="tables.html">Tablas</a>
+			<a href="?c=Landing&a=tables">Tablas</a>
 		</div>
 		<section class="paginas">
 			<h3 class="subtitulo">Tablas en HTML y CSS</h3>
