@@ -42,7 +42,7 @@
 						</ul>
 						<ul class="navbar-nav pr-4">
 							<li class="nav-item">
-								<a class="nav-link ocul-navbar" href="modules/7_others/email.html" target="area_trabajo">
+								<a class="nav-link ocul-navbar" href="?c=Dashboard&a=email">
 									<i class="fa-solid fa-envelope"></i>
 									Correo
 								</a>
