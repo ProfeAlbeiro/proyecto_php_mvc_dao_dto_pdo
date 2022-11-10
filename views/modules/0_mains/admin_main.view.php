@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Información</title>
-    <link rel="shortcut icon" href="img/css.png">
-    <link rel="stylesheet" href="../../css/all.min.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/styles-dashboard-bootstrap4.css">
-</head>
-
-<body>
-    <!-- Contenedor -->
-    <div class="container-fluid captura-id">
         <!-- Migas de Pan -->
         <div class="migas row d-flex align-items-center bg-light border-bottom">
             <div class="col p-0">
@@ -127,12 +111,4 @@
                     </div>
                 </div>
             </div>            
-        </div>
-    </div>
-    <script src="../../js/jquery.slim.min.js"></script>
-    <script src="../../js/popper.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/scripts-dash.js"></script>
-</body>
-
-</html>
+        </div>    
