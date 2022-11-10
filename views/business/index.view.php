@@ -34,7 +34,7 @@
                     numquam
                     eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
                 <div class="borde ver">
-                    <a href="pages/alerts.html">Ver más...</a>
+                    <a href="?c=Landing&a=alerts">Ver más...</a>
                 </div>
             </div>
             <div class="port-col-der color-gris-claro">

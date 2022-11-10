@@ -11,5 +11,10 @@
             require_once "views/business/tables.view.php";
             require_once "views/roles/business/footer.php";
         }
+        public function alerts(){
+            require_once "views/roles/business/header.php";
+            require_once "views/business/alerts.view.php";
+            require_once "views/roles/business/footer.php";
+        }
     }
 ?>
