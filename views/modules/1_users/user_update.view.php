@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Información</title>
-    <link rel="shortcut icon" href="img/css.png">
-    <link rel="stylesheet" href="../../css/all.min.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/styles-dashboard-bootstrap4.css">
-</head>
-
-<body>
-    <!-- Contenedor -->
-    <div class="container-fluid captura-id">
         <!-- Migas de Pan -->
         <div class="migas row d-flex align-items-center bg-white border-bottom">
             <div class="col p-0">
@@ -47,8 +31,8 @@
                     action="user_read.html" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="perfil_usuario">Perfil</label>
-                            <select class="form-control class-perfil" id="perfil">
+                            <label for="user_perfil">Perfil</label>
+                            <select class="form-control class-perfil" id="user_perfil">
                                 <!-- <option></option> -->
                                 <option>usuario</option>
                                 <option>cliente</option>
@@ -107,12 +91,3 @@
                 </form>
             </div>
         </div>
-    </div>
-    <script src="../../js/sweetalert.min.js"></script>
-    <script src="../../js/jquery.slim.min.js"></script>
-    <script src="../../js/popper.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/scripts-dash.js"></script>
-</body>
-
-</html>

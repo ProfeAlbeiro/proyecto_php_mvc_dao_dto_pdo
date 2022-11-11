@@ -20,7 +20,16 @@
             require_once "views/modules/1_users/user_read.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        // función actualizar
+        // Actualizar Usuario
+        public function update(){
+            // Programar
+            require_once "views/roles/admin/header.php";
+            require_once "views/modules/1_users/user_update.view.php";
+            require_once "views/roles/admin/footer.php";
+        }
         // función eliminar
+        public function delete(){
+            // Programar            
+        }
     }
 ?>

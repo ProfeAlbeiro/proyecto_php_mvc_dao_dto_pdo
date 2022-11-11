@@ -49,7 +49,7 @@
                             <td>profealbeiro2020@gmail.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -62,7 +62,7 @@
                             <td>rosa@cliente.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -75,7 +75,7 @@
                             <td>victor@empleado.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -88,7 +88,7 @@
                             <td>pepito@estudiante.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -101,7 +101,7 @@
                             <td>jose@profesor.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -114,7 +114,7 @@
                             <td>maria@proveedor.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -127,7 +127,7 @@
                             <td>sofia@contable.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -140,7 +140,7 @@
                             <td>amaranta@rector.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -153,7 +153,7 @@
                             <td>camila@rrhh.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -166,7 +166,7 @@
                             <td>profealbeiro2020@gmail.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -179,7 +179,7 @@
                             <td>rosa@cliente.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -192,7 +192,7 @@
                             <td>victor@empleado.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -205,7 +205,7 @@
                             <td>pepito@estudiante.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -218,7 +218,7 @@
                             <td>jose@profesor.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -231,7 +231,7 @@
                             <td>maria@proveedor.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -244,7 +244,7 @@
                             <td>sofia@contable.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -257,7 +257,7 @@
                             <td>amaranta@rector.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -270,7 +270,7 @@
                             <td>camila@rrhh.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -283,7 +283,7 @@
                             <td>profealbeiro2020@gmail.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -296,7 +296,7 @@
                             <td>rosa@cliente.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -309,7 +309,7 @@
                             <td>victor@empleado.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -322,7 +322,7 @@
                             <td>pepito@estudiante.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -335,7 +335,7 @@
                             <td>jose@profesor.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -348,7 +348,7 @@
                             <td>maria@proveedor.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -361,7 +361,7 @@
                             <td>sofia@contable.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -374,7 +374,7 @@
                             <td>amaranta@rector.com</td>
                             <td>Retirado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -387,7 +387,7 @@
                             <td>camila@rrhh.com</td>
                             <td>Activado</td>
                             <td class="tabla-acciones">
-                                <a class="tabla-edit" href="user_update.html"><i class="fas fa-edit"></i></a>
+                                <a class="tabla-edit" href="?c=Users&a=update"><i class="fas fa-edit"></i></a>
                                 <a class="tabla-delete" href="#" onclick="deleteUser()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
