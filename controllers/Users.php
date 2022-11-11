@@ -6,6 +6,13 @@
             require_once "views/modules/0_mains/admin_main.view.php";
             require_once "views/roles/admin/footer.php";
         }
+        // Configurar Usuario
+        public function config(){
+            // Programar
+            require_once "views/roles/admin/header.php";
+            require_once "views/modules/1_users/user_config.view.php";
+            require_once "views/roles/admin/footer.php";
+        }
         // Crear Usuario
         public function create(){
             // Programar

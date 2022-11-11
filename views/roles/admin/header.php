@@ -74,7 +74,7 @@
 									Administrador
 								</a>
 								<div class="dropdown-menu  dropdown-menu-right">
-									<a class="dropdown-item ocul-navbar" href="modules/1_users/user_config.html" target="area_trabajo">Configuración</a>
+									<a class="dropdown-item ocul-navbar" href="?c=Users&a=config">Configuración</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item ocul-navbar" href="?c=Logout">Cerrar Sesión</a>
 								</div>
@@ -96,7 +96,7 @@
 						class="col-7 p-3 d-flex flex-column justify-content-center font-weight-bold bg-light">
 						<p class="m-0">Pepito Perez</p>
 						<p class="m-0">Administrador</p>
-						<a href="modules/1_users/user_config.html" target="area_trabajo" class="m-0 ocul-panel">Configuración</a>
+						<a href="?c=Users&a=config" class="m-0 ocul-panel">Configuración</a>
 					</div>
 				</div>
 				<div id="modulos" class="modulos row bg-white border-top">

@@ -1,9 +1,10 @@
         <!-- Migas de Pan -->
-        <div class="migas row d-flex align-items-center bg-light border-bottom">
+        <div class="migas row d-flex align-items-center bg-white border-bottom">
             <div class="col p-0">
                 <div aria-label="breadcrumb">
-                    <ol class="breadcrumb rounded-0 m-0 p-2 bg-light">
-                        <li class="breadcrumb-item"><a href="?c=Dashboard">Inicio</a></li>
+                    <ol class="breadcrumb rounded-0 m-0 p-2 bg-white">
+                        <li class="breadcrumb-item"><a href="?c=Dashboard">Inicio</a></li>                        
+                        <li class="breadcrumb-item active" aria-current="page">Actividades</li>
                     </ol>
                 </div>
             </div>
@@ -12,7 +13,7 @@
         <!-- Título -->
         <div class="titulo-contenido row">
             <div class="col p-0 border-bottom d-flex justify-content-center align-items-center">
-                <h5 class="m-0">Error 404</h5>
+                <h5 class="m-0">Actividades</h5>
             </div>
         </div>
 
