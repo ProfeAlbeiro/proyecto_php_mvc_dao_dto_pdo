@@ -6,6 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sistema de Información</title>
 	<link rel="shortcut icon" href="assets/img/css.png">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.css">  
 	<link rel="stylesheet" href="assets/css/all.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/styles-dashboard-bootstrap4.css">	
@@ -116,8 +122,7 @@
 													Usuario</a>
 											</li>
 											<li class="list-group-item p-0 bg-light">
-												<a href="modules/1_users/user_read.html" target="area_trabajo"
-													class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar
+												<a href="?c=Users&a=read" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar
 													Usuarios</a>
 											</li>
 										</ul>
