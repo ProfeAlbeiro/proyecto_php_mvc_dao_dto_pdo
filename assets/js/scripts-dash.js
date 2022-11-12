@@ -77,31 +77,11 @@ function capturaIdMet() {
     } else if (id === "submit-user-create") {
         validarUser();
     } else if (id === "submit-user-create-cancel") {
-        event.preventDefault();
-        swal({
-            title: "Se canceló el Registro de Usuario!",
-            text: "No se ha guardado ningún dato",
-            icon: "error",
-            button: "Aceptar",
-        })
-            .then((value) => {
-                window.location = '?c=Users&a=read';
-                document.formUserCreate.reset();
-            });
+        cancelUserCreate();
     } else if (id === "submit-user-update") {
         validarUser();
     } else if (id === "submit-user-update-cancel") {
-        event.preventDefault();
-        swal({
-            title: "Se canceló la Actualización del Usuario!",
-            text: "No se ha guardado ningún dato",
-            icon: "error",
-            button: "Aceptar",
-        })
-            .then((value) => {
-                // document.formRegister.reset();
-                window.location = 'user_read.html';
-            });
+        cancelUserUpdate();
     }    
 }
 // Ocultar Barra de Navegación
@@ -122,11 +102,90 @@ function btnMenuLateral() {
     document.getElementById("modulos").classList.toggle('activar-panel');
     document.getElementById("area_principal").classList.toggle('ampliar-principal');    
 }
-function validarUser() {    
-    let patronCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;    
-    let patronTexto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/; 
+// Ocultar Panel Lateral: Celular
+function ocultaPanel() {
+    var item2 = document.getElementById("navbarSupportedContent");
+    var navActivo = item2.classList.contains('show');     
+    if (screen.width < 992) {
+        btnMenuLateral(); 
+        if (navActivo) {
+            document.getElementById("navbarSupportedContent").classList.toggle('show');
+        }
+    }
+}
+// Crear Usuario: Controles según perfil
+function perfilar() {
+    let select = document.getElementById('user_perfil');
+    let user = this.options[select.selectedIndex];
+
+    if (user.text === "usuario") {
+        $('#user_foto').removeAttr("required");
+        $('#user_doc_identidad').removeAttr("required");
+        $('#user_contrasena').removeAttr("required");
+        $('#user_confirmacion').removeAttr("required");
+        $('#user_fecha_nac').removeAttr("required");
+        $('#user_estado').removeAttr("required");
+        $('#user_salario').removeAttr("required");
+        document.getElementById("foto_group").classList.add('ocultar-control');
+        document.getElementById("doc_identidad_group").classList.add('ocultar-control');
+        document.getElementById("contrasena_us_group").classList.add('ocultar-control');
+        document.getElementById("confirmacion_group").classList.add('ocultar-control');
+        document.getElementById("fechaNac_group").classList.add('ocultar-control');
+        document.getElementById("estado_group").classList.add('ocultar-control');
+        document.getElementById("salario_group").classList.add('ocultar-control');
+    } else if (user.text === "cliente") {
+        $('#user_salario').removeAttr("required");
+        $('#user_foto').prop("required", true);
+        $('#user_doc_identidad').prop("required", true);
+        $('#user_contrasena').prop("required", true);
+        $('#user_confirmacion').prop("required", true);
+        $('#user_fecha_nac').prop("required", true);
+        $('#user_estado').prop("required", true);
+        document.getElementById("foto_group").classList.remove('ocultar-control');
+        document.getElementById("doc_identidad_group").classList.remove('ocultar-control');
+        document.getElementById("contrasena_us_group").classList.remove('ocultar-control');
+        document.getElementById("confirmacion_group").classList.remove('ocultar-control');
+        document.getElementById("fechaNac_group").classList.remove('ocultar-control');
+        document.getElementById("estado_group").classList.remove('ocultar-control');
+        document.getElementById("salario_group").classList.add('ocultar-control');
+    } else if (user.text === "empleado") {
+        $('#user_fecha_nac').removeAttr("required", true);
+        $('#user_foto').prop("required", true);
+        $('#user_doc_identidad').prop("required", true);
+        $('#user_contrasena').prop("required", true);
+        $('#user_confirmacion').prop("required", true);
+        $('#user_estado').prop("required", true);
+        $('#user_salario').prop("required", true);
+        document.getElementById("foto_group").classList.remove('ocultar-control');
+        document.getElementById("doc_identidad_group").classList.remove('ocultar-control');
+        document.getElementById("contrasena_us_group").classList.remove('ocultar-control');
+        document.getElementById("confirmacion_group").classList.remove('ocultar-control');
+        document.getElementById("fechaNac_group").classList.add('ocultar-control');
+        document.getElementById("estado_group").classList.remove('ocultar-control');
+        document.getElementById("salario_group").classList.remove('ocultar-control');
+    } else if (user.text === "administrador") {
+        $('#user_fecha_nac').removeAttr("required", true);
+        $('#user_foto').prop("required", true);
+        $('#user_doc_identidad').prop("required", true);
+        $('#user_contrasena').prop("required", true);
+        $('#user_confirmacion').prop("required", true);
+        $('#user_estado').prop("required", true);
+        $('#user_salario').removeAttr("required", true);
+        document.getElementById("foto_group").classList.remove('ocultar-control');
+        document.getElementById("doc_identidad_group").classList.remove('ocultar-control');
+        document.getElementById("contrasena_us_group").classList.remove('ocultar-control');
+        document.getElementById("confirmacion_group").classList.remove('ocultar-control');
+        document.getElementById("fechaNac_group").classList.add('ocultar-control');
+        document.getElementById("estado_group").classList.remove('ocultar-control');
+        document.getElementById("salario_group").classList.add('ocultar-control');
+    }
+}
+// Validar Usuario
+function validarUser() {
+    let patronCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+    let patronTexto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;
     let userPerfil = document.getElementById('user_perfil').value.toUpperCase();
-    let userNombres = document.getElementById('user_nombres').value;     
+    let userNombres = document.getElementById('user_nombres').value;
     let userCorreo = document.getElementById('user_correo').value;
     let userApellidos = document.getElementById('user_apellidos').value;
     let userFoto = document.getElementById('user_foto').value;
@@ -138,7 +197,7 @@ function validarUser() {
     let userSalario = document.getElementById('user_salario').value;
     let forms = document.getElementsByClassName('needs-validation');
     let validation = Array.prototype.filter.call(forms, function (form) {
-        form.addEventListener('submit', function (event) { 
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
             event.stopPropagation();
             // Foto: No vacío
@@ -154,7 +213,7 @@ function validarUser() {
                     });
             }
             // Nombres: No vacío
-            else if (form.checkValidity() === false && userNombres === "") {                
+            else if (form.checkValidity() === false && userNombres === "") {
                 swal({
                     title: "Verifique el campo Nombres",
                     text: "Los Nombres NO pueden estar vacíos",
@@ -163,10 +222,10 @@ function validarUser() {
                 })
                     .then((value) => {
                         document.getElementById('user_nombres').focus();
-                    });          
+                    });
             }
             // Nombres: Datos Alfabéticos
-            else if (form.checkValidity() === false && !patronTexto.test(userNombres)) {                
+            else if (form.checkValidity() === false && !patronTexto.test(userNombres)) {
                 swal({
                     title: "Verifique el campo Nombres",
                     text: "Los Nombres NO pueden contener números o caracteres especiales",
@@ -296,7 +355,7 @@ function validarUser() {
                     .then((value) => {
                         document.getElementById('user_contrasena').focus();
                     });
-            }            
+            }
             // Contraseña: Entre 5 y 8 caracteres
             else if (form.checkValidity() === false && (userContrasena.length < 5 || userContrasena.length > 8)) {
                 swal({
@@ -308,7 +367,7 @@ function validarUser() {
                     .then((value) => {
                         document.getElementById('user_contrasena').focus();
                     });
-            } 
+            }
             // Confirmación: No vacío
             else if (form.checkValidity() === false && userConfirmacion === "") {
                 swal({
@@ -334,7 +393,7 @@ function validarUser() {
                     });
             }
             // Comprobar si Contraseña y Confirmación son iguales
-            else if (form.checkValidity() === false && (userContrasena !== userConfirmacion)) { 
+            else if (form.checkValidity() === false && (userContrasena !== userConfirmacion)) {
                 swal({
                     title: "Verifique los campos Contraseña y Confirmación",
                     text: "La Contraseña y la Confirmación debe ser iguales",
@@ -394,10 +453,10 @@ function validarUser() {
                     .then((value) => {
                         document.getElementById('user_salario').focus();
                     });
-            }    
+            }
             // Validación Completa: Usuario creado correctamente
             else {
-                if (id === "submit-user-create") { 
+                if (id === "submit-user-create") {
                     swal({
                         title: userPerfil + " creado correctamente!",
                         text: "Le llegará al " + userPerfil + " un Correo Electrónico para validar el Registro",
@@ -420,22 +479,39 @@ function validarUser() {
                             // window.location = '../1_users/user_read.html';
                         });
                 }
-                
+
             }
-            form.classList.add('was-validated');            
+            form.classList.add('was-validated');
         }, false);
-    });    
+    });
 }
-// Ocultar Panel Lateral: Celular
-function ocultaPanel() {
-    var item2 = document.getElementById("navbarSupportedContent");
-    var navActivo = item2.classList.contains('show');     
-    if (screen.width < 992) {
-        btnMenuLateral(); 
-        if (navActivo) {
-            document.getElementById("navbarSupportedContent").classList.toggle('show');
-        }
-    }
+// Cancelar Creación de Usuario
+function cancelUserCreate() {
+    event.preventDefault();
+    swal({
+        title: "Se canceló el Registro de Usuario!",
+        text: "No se ha guardado ningún dato",
+        icon: "error",
+        button: "Aceptar",
+    })
+    .then((value) => {
+        window.location = '?c=Users&a=read';
+        document.formUserCreate.reset();
+    });
+}
+// Cancelar Actualización de Usuario
+function cancelUserUpdate() {
+    event.preventDefault();
+    swal({
+        title: "Se canceló la Actualización del Usuario!",
+        text: "No se ha guardado ningún dato",
+        icon: "error",
+        button: "Aceptar",
+    })
+    .then((value) => {
+        window.location = '?c=Users&a=read';
+        document.formUserUpdate.reset();
+    });
 }
 // Mensaje de Eliminación del Usuario
 function deleteUser() {
@@ -456,71 +532,4 @@ function deleteUser() {
                 swal("El Usuario se ha convervado");
             }
         });
-}
-// Crear Usuario: Controles según perfil
-function perfilar() {    
-    let select = document.getElementById('user_perfil');
-    let user = this.options[select.selectedIndex];    
-    
-    if (user.text === "usuario") {
-        $('#user_foto').removeAttr("required");
-        $('#user_doc_identidad').removeAttr("required");
-        $('#user_contrasena').removeAttr("required");
-        $('#user_confirmacion').removeAttr("required");
-        $('#user_fecha_nac').removeAttr("required");
-        $('#user_estado').removeAttr("required");
-        $('#user_salario').removeAttr("required");
-        document.getElementById("foto_group").classList.add('ocultar-control');
-        document.getElementById("doc_identidad_group").classList.add('ocultar-control');
-        document.getElementById("contrasena_us_group").classList.add('ocultar-control');
-        document.getElementById("confirmacion_group").classList.add('ocultar-control');
-        document.getElementById("fechaNac_group").classList.add('ocultar-control');
-        document.getElementById("estado_group").classList.add('ocultar-control');
-        document.getElementById("salario_group").classList.add('ocultar-control');        
-    } else if (user.text === "cliente") {
-        $('#user_salario').removeAttr("required");
-        $('#user_foto').prop("required", true);
-        $('#user_doc_identidad').prop("required", true);
-        $('#user_contrasena').prop("required", true);
-        $('#user_confirmacion').prop("required", true);
-        $('#user_fecha_nac').prop("required", true);
-        $('#user_estado').prop("required", true);
-        document.getElementById("foto_group").classList.remove('ocultar-control');
-        document.getElementById("doc_identidad_group").classList.remove('ocultar-control');
-        document.getElementById("contrasena_us_group").classList.remove('ocultar-control');
-        document.getElementById("confirmacion_group").classList.remove('ocultar-control');
-        document.getElementById("fechaNac_group").classList.remove('ocultar-control');
-        document.getElementById("estado_group").classList.remove('ocultar-control');
-        document.getElementById("salario_group").classList.add('ocultar-control');        
-    } else if (user.text === "empleado") {
-        $('#user_fecha_nac').removeAttr("required", true);
-        $('#user_foto').prop("required", true);
-        $('#user_doc_identidad').prop("required", true);
-        $('#user_contrasena').prop("required", true);
-        $('#user_confirmacion').prop("required", true);
-        $('#user_estado').prop("required", true);
-        $('#user_salario').prop("required", true);
-        document.getElementById("foto_group").classList.remove('ocultar-control');
-        document.getElementById("doc_identidad_group").classList.remove('ocultar-control');
-        document.getElementById("contrasena_us_group").classList.remove('ocultar-control');
-        document.getElementById("confirmacion_group").classList.remove('ocultar-control');
-        document.getElementById("fechaNac_group").classList.add('ocultar-control');
-        document.getElementById("estado_group").classList.remove('ocultar-control');
-        document.getElementById("salario_group").classList.remove('ocultar-control');
-    } else if (user.text === "administrador") {
-        $('#user_fecha_nac').removeAttr("required", true);
-        $('#user_foto').prop("required", true);
-        $('#user_doc_identidad').prop("required", true);
-        $('#user_contrasena').prop("required", true);
-        $('#user_confirmacion').prop("required", true);
-        $('#user_estado').prop("required", true);
-        $('#user_salario').removeAttr("required", true);
-        document.getElementById("foto_group").classList.remove('ocultar-control');
-        document.getElementById("doc_identidad_group").classList.remove('ocultar-control');
-        document.getElementById("contrasena_us_group").classList.remove('ocultar-control');
-        document.getElementById("confirmacion_group").classList.remove('ocultar-control');
-        document.getElementById("fechaNac_group").classList.add('ocultar-control');
-        document.getElementById("estado_group").classList.remove('ocultar-control');
-        document.getElementById("salario_group").classList.add('ocultar-control');
-    }
 }
