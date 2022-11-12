@@ -17,7 +17,7 @@
                 <h5 class="m-0">Error 404</h5>
             </div>
         </div>
-
+        
         <!-- Contenido -->
         <div class="contenido row bg-white p-3">
             <img src="assets/img/error404.png" class="col h-100 p-0" alt="error404">
