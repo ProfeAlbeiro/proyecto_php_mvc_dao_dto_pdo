@@ -75,7 +75,7 @@ function capturaIdMet() {
     if (id === "btn-menu-lateral") {
         btnMenuLateral();
     } else if (id === "submit-user-create") {
-        validarUserCreate();
+        validarUser();
     } else if (id === "submit-user-create-cancel") {
         event.preventDefault();
         swal({
@@ -85,21 +85,11 @@ function capturaIdMet() {
             button: "Aceptar",
         })
             .then((value) => {
-                // document.formRegister.reset();
-                window.location = 'user_read.html';
+                window.location = '?c=Users&a=read';
+                document.formUserCreate.reset();
             });
     } else if (id === "submit-user-update") {
-        event.preventDefault();
-        swal({
-            title: "Usuario Actualizado correctamente!",
-            text: "Verifique el registro con los datos actualizados",
-            icon: "success",
-            button: "Aceptar",
-        })
-            .then((value) => {
-                // document.formUserCreate.submit();            
-                window.location = '../1_users/user_read.html';
-            });
+        validarUser();
     } else if (id === "submit-user-update-cancel") {
         event.preventDefault();
         swal({
@@ -123,7 +113,6 @@ function ocultaNav() {
         btnMenuLateral();
     } 
 }
-
 // Ocultar Panel Lateral
 function btnMenuLateral() {    
     document.getElementById("panel-lateral").classList.toggle('activar-panel');
@@ -133,8 +122,7 @@ function btnMenuLateral() {
     document.getElementById("modulos").classList.toggle('activar-panel');
     document.getElementById("area_principal").classList.toggle('ampliar-principal');    
 }
-
-function validarUserCreate() {    
+function validarUser() {    
     let patronCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;    
     let patronTexto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/; 
     let userPerfil = document.getElementById('user_perfil').value.toUpperCase();
@@ -408,23 +396,36 @@ function validarUserCreate() {
                     });
             }    
             // Validación Completa: Usuario creado correctamente
-            else {                
-                swal({
-                    title: userPerfil + " creado correctamente!",
-                    text: "Le llegará al " + userPerfil + " un Correo Electrónico para validar el Registro",
-                    icon: "success",
-                    button: "Aceptar",
-                })
-                    .then((value) => {
-                        // document.formUserCreate.submit();            
-                        window.location = '../1_users/user_read.html';
-                    });
+            else {
+                if (id === "submit-user-create") { 
+                    swal({
+                        title: userPerfil + " creado correctamente!",
+                        text: "Le llegará al " + userPerfil + " un Correo Electrónico para validar el Registro",
+                        icon: "success",
+                        button: "Aceptar",
+                    })
+                        .then((value) => {
+                            document.formUserCreate.submit();
+                            // window.location = '../1_users/user_read.html';
+                        });
+                } else {
+                    swal({
+                        title: userPerfil + " Actualizado correctamente!",
+                        text: "El " + userPerfil + " fue acturalizado correctamente",
+                        icon: "success",
+                        button: "Aceptar",
+                    })
+                        .then((value) => {
+                            document.formUserUpdate.submit();
+                            // window.location = '../1_users/user_read.html';
+                        });
+                }
+                
             }
             form.classList.add('was-validated');            
         }, false);
     });    
 }
-
 // Ocultar Panel Lateral: Celular
 function ocultaPanel() {
     var item2 = document.getElementById("navbarSupportedContent");
@@ -436,7 +437,6 @@ function ocultaPanel() {
         }
     }
 }
-
 // Mensaje de Eliminación del Usuario
 function deleteUser() {
     swal({
@@ -457,7 +457,6 @@ function deleteUser() {
             }
         });
 }
-
 // Crear Usuario: Controles según perfil
 function perfilar() {    
     let select = document.getElementById('user_perfil');
@@ -493,7 +492,7 @@ function perfilar() {
         document.getElementById("fechaNac_group").classList.remove('ocultar-control');
         document.getElementById("estado_group").classList.remove('ocultar-control');
         document.getElementById("salario_group").classList.add('ocultar-control');        
-    } else if (user.text === "empleado" || user.text === "administrador") {
+    } else if (user.text === "empleado") {
         $('#user_fecha_nac').removeAttr("required", true);
         $('#user_foto').prop("required", true);
         $('#user_doc_identidad').prop("required", true);
@@ -508,5 +507,20 @@ function perfilar() {
         document.getElementById("fechaNac_group").classList.add('ocultar-control');
         document.getElementById("estado_group").classList.remove('ocultar-control');
         document.getElementById("salario_group").classList.remove('ocultar-control');
-    }    
+    } else if (user.text === "administrador") {
+        $('#user_fecha_nac').removeAttr("required", true);
+        $('#user_foto').prop("required", true);
+        $('#user_doc_identidad').prop("required", true);
+        $('#user_contrasena').prop("required", true);
+        $('#user_confirmacion').prop("required", true);
+        $('#user_estado').prop("required", true);
+        $('#user_salario').removeAttr("required", true);
+        document.getElementById("foto_group").classList.remove('ocultar-control');
+        document.getElementById("doc_identidad_group").classList.remove('ocultar-control');
+        document.getElementById("contrasena_us_group").classList.remove('ocultar-control');
+        document.getElementById("confirmacion_group").classList.remove('ocultar-control');
+        document.getElementById("fechaNac_group").classList.add('ocultar-control');
+        document.getElementById("estado_group").classList.remove('ocultar-control');
+        document.getElementById("salario_group").classList.add('ocultar-control');
+    }
 }

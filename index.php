@@ -2,8 +2,7 @@
     if (!isset($_REQUEST['c'])) {
         require_once "controllers/Dashboard.php";
         $controller = new Dashboard;
-        $controller->index();
-        // Prueba
+        $controller->index();        
     } else {
         $controller = $_REQUEST['c'];
         require_once "controllers/". $controller . ".php";

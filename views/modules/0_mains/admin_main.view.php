@@ -25,10 +25,9 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="../1_users/user_create.html" class="card-link">Crear usuarios</a>
+                            <li class="list-group-item"><a href="?c=Users&a=create" class="card-link">Crear usuarios</a>
                             </li>
-                            <li class="list-group-item"><a href="../1_users/user_read.html" class="card-link">Consultar
-                                    Usuarios</a></li>
+                            <li class="list-group-item"><a href="?c=Users&a=read" class="card-link">Consultar Usuarios</a></li>
                         </ul>
                     </div>
                 </div>

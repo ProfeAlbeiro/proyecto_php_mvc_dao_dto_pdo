@@ -3,7 +3,7 @@
             <div class="col p-0">
                 <div aria-label="breadcrumb">
                     <ol class="breadcrumb rounded-0 m-0 p-2 bg-white">
-                        <li class="breadcrumb-item"><a href="../0_mains/admin_main.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="?c=Dashboard">Inicio</a></li>
                         <li class="breadcrumb-item">Módulo Usuarios</li>
                         <li class="breadcrumb-item active" aria-current="page">Crear Usuario</li>
                     </ol>
@@ -18,7 +18,7 @@
                     <h5 class="m-0">Crear Usuario</h5>
                 </div>
                 <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                    <a href="user_read.html" class="btn btn-light">Consultar Usuarios</a>
+                    <a href="?c=Users&a=read" class="btn btn-light">Consultar Usuarios</a>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
         <!-- Contenido -->
         <div class="contenido row bg-light p-2">
             <div class="col p-0 bg-light">
-                <form id="formUserCreate" name="formUserCreate" class="card p-3 bg-dark text-white d-lg-flex justify-content-center w-100 border rounded p-2 needs-validation" action="" method="post" novalidate>
+                <form id="formUserCreate" name="formUserCreate" class="card p-3 bg-dark text-white d-lg-flex justify-content-center w-100 border rounded p-2 needs-validation" action="?c=Users&a=read" method="post" novalidate>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="user_perfil">Perfil</label>
@@ -78,8 +78,8 @@
                             <label for="user_estado">Estado</label>
                             <select class="form-control" id="user_estado">
                                 <option></option>
-                                <option>inactivo</option>
                                 <option>activo</option>
+                                <option>inactivo</option>
                             </select>
                         </div>
                         <div id="salario_group" class="form-group col-md-6 ocultar-control">
