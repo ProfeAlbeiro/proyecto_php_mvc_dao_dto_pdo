@@ -18,7 +18,7 @@
                     <h5 class="m-0">Crear Usuario</h5>
                 </div>
                 <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                    <a href="?c=Users&a=read" class="btn btn-light">Consultar Usuarios</a>
+                    <a href="?c=Users&a=readUser" class="btn btn-light">Consultar Usuarios</a>
                 </div>
             </div>
         </div>

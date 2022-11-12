@@ -74,6 +74,10 @@ function capturaIdMet() {
     id = event.target.getAttribute("id");
     if (id === "btn-menu-lateral") {
         btnMenuLateral();
+    } else if (id === "submit-rol-create") {
+        validarRol();
+    } else if (id === "submit-rol-create-cancel") {
+        cancelRolCreate();
     } else if (id === "submit-user-create") {
         validarUser();
     } else if (id === "submit-user-create-cancel") {
@@ -179,6 +183,130 @@ function perfilar() {
         document.getElementById("estado_group").classList.remove('ocultar-control');
         document.getElementById("salario_group").classList.add('ocultar-control');
     }
+}
+// Validar Rol
+function validarRol() {
+    let patronTexto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;
+    let rolNombre = document.getElementById('rol_nombre').value;
+    let forms = document.getElementsByClassName('needs-validation');
+    let validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            // Nombres: No vacío
+            if (form.checkValidity() === false && rolNombre === "") {
+                swal({
+                    title: "Verifique el campo Nombre",
+                    text: "El Nombre NO pueden estar vacíos",
+                    icon: "error",
+                    button: "Aceptar",
+                })
+                    .then((value) => {
+                        document.getElementById('rol_nombre').focus();
+                    });
+            }
+            // Nombres: Datos Alfabéticos
+            else if (form.checkValidity() === false && !patronTexto.test(rolNombre)) {
+                swal({
+                    title: "Verifique el campo Nombre",
+                    text: "El Nombre NO pueden contener números o caracteres especiales",
+                    icon: "error",
+                    button: "Aceptar",
+                })
+                    .then((value) => {
+                        document.getElementById('rol_nombre').focus();
+                    });
+            }
+            // Nombre: Entre 2 y 50 caracteres
+            else if (form.checkValidity() === false && (rolNombre.length < 2 || rolNombre.length > 50)) {
+                swal({
+                    title: "Verifique el campo Nombre",
+                    text: "El Nombre debe contener entre 2 y 50 caracteres",
+                    icon: "error",
+                    button: "Aceptar",
+                })
+                    .then((value) => {
+                        document.getElementById('rol_nombre').focus();
+                    });
+            }
+            // Validación Completa: Rol creado correctamente
+            else {
+                if (id === "submit-rol-create") {
+                    swal({
+                        title: "El Rol fue creado correctamente!",
+                        text: "Ya puede utilizar el Rol para Crear Usuarios",
+                        icon: "success",
+                        button: "Aceptar",
+                    })
+                        .then((value) => {
+                            document.formRolCreate.submit();
+                            // window.location = '../1_users/user_read.html';
+                        });
+                } else {
+                    swal({
+                        title: "El Rol Fue Actualizado correctamente!",
+                        text: "Ya se ha actualizado el Rol de los Usuarios",
+                        icon: "success",
+                        button: "Aceptar",
+                    })
+                        .then((value) => {
+                            document.formRolUpdate.submit();
+                            // window.location = '../1_users/user_read.html';
+                        });
+                }
+
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+}
+// Cancelar Creación de Rol
+function cancelRolCreate() {
+    event.preventDefault();
+    swal({
+        title: "Se canceló el Registro del Rol!",
+        text: "No se ha guardado ningún dato",
+        icon: "error",
+        button: "Aceptar",
+    })
+        .then((value) => {
+            window.location = '?c=Users&a=readRol';
+            document.formRolCreate.reset();
+        });
+}
+// Cancelar Actualización de Rol
+function cancelRolUpdate() {
+    event.preventDefault();
+    swal({
+        title: "Se canceló la Actualización del Rol!",
+        text: "No se ha guardado ningún dato",
+        icon: "error",
+        button: "Aceptar",
+    })
+        .then((value) => {
+            window.location = '?c=Users&a=readRol';
+            document.formRolCreate.reset();
+        });
+}
+// Mensaje de Eliminación del Rol
+function deleteRol() {
+    swal({
+        title: "Está seguro de eliminar el Rol",
+        text: "Si elimina el Rol, ya no podrá ser recuperado de la memoria!",
+        icon: "warning",
+        buttons: [true, "Aceptar"],
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("El Rol ha sido eliminado!", {
+                    icon: "success",
+                });
+                tabla.deleteRow(i);
+            } else {
+                swal("El Rol se ha conservado");
+            }
+        });
 }
 // Validar Usuario
 function validarUser() {
@@ -470,7 +598,7 @@ function validarUser() {
                 } else {
                     swal({
                         title: userPerfil + " Actualizado correctamente!",
-                        text: "El " + userPerfil + " fue acturalizado correctamente",
+                        text: "El " + userPerfil + " fue actualizado correctamente",
                         icon: "success",
                         button: "Aceptar",
                     })
@@ -495,7 +623,7 @@ function cancelUserCreate() {
         button: "Aceptar",
     })
     .then((value) => {
-        window.location = '?c=Users&a=read';
+        window.location = '?c=Users&a=readUser';
         document.formUserCreate.reset();
     });
 }
@@ -509,7 +637,7 @@ function cancelUserUpdate() {
         button: "Aceptar",
     })
     .then((value) => {
-        window.location = '?c=Users&a=read';
+        window.location = '?c=Users&a=readUser';
         document.formUserUpdate.reset();
     });
 }
@@ -529,7 +657,7 @@ function deleteUser() {
                 });
                 tabla.deleteRow(i);
             } else {
-                swal("El Usuario se ha convervado");
+                swal("El Usuario se ha conservado");
             }
         });
 }
