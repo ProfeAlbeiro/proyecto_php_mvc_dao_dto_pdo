@@ -60,9 +60,9 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="../3_buy/buy_create.html" class="card-link">Crear compra</a>
+                            <li class="list-group-item"><a href="?c=Purchases&a=createBuy" class="card-link">Crear compra</a>
                             </li>
-                            <li class="list-group-item"><a href="../3_buy/buy_read.html" class="card-link">Consultar compras</a></li>
+                            <li class="list-group-item"><a href="?c=Purchases&a=readBuy" class="card-link">Consultar compras</a></li>
                         </ul>
                     </div>
                 </div>

@@ -189,14 +189,10 @@
                                     <div class="card">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item p-0 bg-light">
-                                                <a href="modules/3_buy/buy_create.html" target="area_trabajo"
-                                                    class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear
-                                                    Compra</a>
+                                                <a href="?c=Purchases&a=createBuy" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear Compra</a>
                                             </li>
                                             <li class="list-group-item p-0 bg-light">
-                                                <a href="modules/3_buy/buy_read.html" target="area_trabajo"
-                                                    class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar
-                                                    Productos</a>
+                                                <a href="?c=Purchases&a=readBuy" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar Compra</a>
                                             </li>
                                         </ul>
                                     </div>
