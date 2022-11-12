@@ -1,66 +1,59 @@
 <?php
-    class Users{
+    class Products{
         public function __construct(){}
         public function index(){
             require_once "views/roles/admin/header.php";
             require_once "views/roles/admin/admin_main.view.php";
             require_once "views/roles/admin/footer.php";
-        }
-        // Configurar Usuario
-        public function configUser(){
-            // Programar
-            require_once "views/roles/admin/header.php";
-            require_once "views/modules/1_users/user_config.view.php";
-            require_once "views/roles/admin/footer.php";
         }        
-        // Crear Rol
-        public function createRol(){
+        // Crear Categoría
+        public function createCategory(){
             // Programar
             require_once "views/roles/admin/header.php";            
-            require_once "views/modules/1_users/rol_create.view.php";
+            require_once "views/modules/2_products/category_create.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        // Consultar Roles
-        public function readRol(){
+        // Consultar Categorías
+        public function readCategory(){
             // Programar
             require_once "views/roles/admin/header.php";            
-            require_once "views/modules/1_users/rol_read.view.php";
+            require_once "views/modules/2_products/category_read.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        // Actualizar Rol
-        public function updateRol(){
+        // Actualizar Categoría
+        public function updateCategory(){
             // Programar
             require_once "views/roles/admin/header.php";            
-            require_once "views/modules/1_users/rol_update.view.php";
+            require_once "views/modules/2_products/category_update.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        // Eliminar Rol
-        public function deleteRol(){
+        // Eliminar Categoría
+        public function deleteCategory(){
             // Programar            
         }        
-        // Crear Usuario
-        public function createUser(){
+        // Crear Producto
+        public function createProduct(){
             // Programar
             require_once "views/roles/admin/header.php";
-            require_once "views/modules/1_users/user_create.view.php";
+            require_once "views/modules/2_products/product_create.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        // Consultar Usuarios
-        public function readUser(){
+        // Consultar Productos
+        public function readProduct(){
             // Programar
             require_once "views/roles/admin/header.php";
-            require_once "views/modules/1_users/user_read.view.php";
+            require_once "views/modules/2_products/product_read.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        // Actualizar Usuario
-        public function updateUser(){
+        // Actualizar Producto
+        public function updateProduct(){
             // Programar
             require_once "views/roles/admin/header.php";
-            require_once "views/modules/1_users/user_update.view.php";
+            require_once "views/modules/2_products/prduct_update.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        // Eliminar Usuario
-        public function deleteUser(){
+        // Eliminar Producto
+        public function deleteProduct(){
             // Programar            
         }
     }

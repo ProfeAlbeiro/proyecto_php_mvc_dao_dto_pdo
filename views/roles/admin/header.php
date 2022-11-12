@@ -156,14 +156,16 @@
                                     <div class="card">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item p-0 bg-light">
-                                                <a href="modules/2_product/product_create.html" target="area_trabajo"
-                                                    class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear
-                                                    Producto</a>
+                                                <a href="?c=Products&a=createCategory" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear Categoría</a>
                                             </li>
                                             <li class="list-group-item p-0 bg-light">
-                                                <a href="modules/2_product/product_read.html" target="area_trabajo"
-                                                    class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar
-                                                    Productos</a>
+                                                <a href="?c=Products&a=createProduct" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear Producto</a>
+                                            </li>
+                                            <li class="list-group-item p-0 bg-light">
+                                                <a href="?c=Products&a=readCategory" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar Categorías</a>
+                                            </li>
+                                            <li class="list-group-item p-0 bg-light">
+                                                <a href="?c=Products&a=readProduct" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar Productos</a>
                                             </li>
                                         </ul>
                                     </div>

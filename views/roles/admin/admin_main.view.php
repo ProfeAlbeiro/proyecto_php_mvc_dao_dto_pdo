@@ -28,7 +28,7 @@
                             <li class="list-group-item"><a href="?c=Users&a=configUser" class="card-link">Configuración</a></li>
                             <li class="list-group-item"><a href="?c=Users&a=createRol" class="card-link">Crear Rol</a></li>
                             <li class="list-group-item"><a href="?c=Users&a=createUser" class="card-link">Crear usuario</a></li>
-                            <li class="list-group-item"><a href="?c=Users&a=readRol" class="card-link">Consultar Rol</a></li>
+                            <li class="list-group-item"><a href="?c=Users&a=readRol" class="card-link">Consultar Roles</a></li>
                             <li class="list-group-item"><a href="?c=Users&a=readUser" class="card-link">Consultar Usuarios</a></li>
                         </ul>
                     </div>
@@ -42,9 +42,12 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="../2_product/product_create.html" class="card-link">Crear producto</a>
+                            <li class="list-group-item"><a href="?c=Products&a=createCategory" class="card-link">Crear Categoría</a>
                             </li>
-                            <li class="list-group-item"><a href="../2_product/product_read.html" class="card-link">Consultar productos</a></li>
+                            <li class="list-group-item"><a href="?c=Products&a=createProduct" class="card-link">Crear Producto</a>
+                            </li>
+                            <li class="list-group-item"><a href="?c=Products&a=readCategory" class="card-link">Consultar Categorías</a></li>
+                            <li class="list-group-item"><a href="?c=Products&a=readProduct" class="card-link">Consultar Productos</a></li>
                         </ul>
                     </div>
                 </div>
