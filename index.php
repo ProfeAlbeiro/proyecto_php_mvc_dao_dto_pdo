@@ -1,7 +1,7 @@
 <?php
     if (!isset($_REQUEST['c'])) {
-        require_once "controllers/Dashboard.php";
-        $controller = new Dashboard;
+        require_once "controllers/Users.php";
+        $controller = new Users;
         $controller->index();        
     } else {
         $controller = $_REQUEST['c'];
