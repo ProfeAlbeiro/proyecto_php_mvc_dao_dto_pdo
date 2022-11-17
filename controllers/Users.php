@@ -11,34 +11,54 @@
         }
         // Crear Rol
         public function createRol(){
-            require_once "views/roles/admin/header.php";            
-            
-            // Programar
-            echo "Estoy en el Controlador Users y acción Crear Rol <br>";
-            
-            // Crear un Objeto con el Constructor
-            $objUser = new UserDto(1, "admin");
-            
-            // Mostrar Resultado            
-            echo "<br>Objeto con el Constructor";
-            echo "<br>Rol: " . $objUser->getCodigoRol();
-            echo "<br>Nombre: " . $objUser->getNombreRol();
-            
-            // Crear un Objeto a partir de los métodos set
-            $objUser2 = new UserDto();
-            $objUser2->setCodigoRol(2);
-            $objUser2->setNombreRol("cliente");
+                        
+            // Muestra el Formulario
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                require_once "views/roles/admin/header.php";
+                require_once "views/modules/1_users/rol_create.view.php";            
+                require_once "views/roles/admin/footer.php";
+            }
+            // Captura los Datos
+            elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-            // Mostrar Resultado
-            echo "<br>";
-            echo "<br>Objeto con métodos set";
-            echo "<br>Rol: " . $objUser2->getCodigoRol();
-            echo "<br>Nombre: " . $objUser2->getNombreRol();
+                $userDto = new UserDto(
+                    $_POST['rol_codigo'], 
+                    $_POST['rol_nombre']
+                );
+                require_once "views/roles/admin/header.php";
+                
+                // Mostrar Resultado            
+                echo "<br>Crer Rol con el Constructor";
+                echo "<br>Rol: " . $userDto->getCodigoRol();
+                echo "<br>Nombre: " . $userDto->getNombreRol();
 
 
-            // require_once "views/modules/1_users/rol_create.view.php";
-            
-            require_once "views/roles/admin/footer.php";
+                require_once "views/roles/admin/footer.php";
+
+                /*
+                // Programar
+                echo "Estoy en el Controlador Users y acción Crear Rol <br>";
+                
+                // Crear un Objeto con el Constructor
+                $objUser = new UserDto(1, "admin");
+                
+                // Mostrar Resultado            
+                echo "<br>Objeto con el Constructor";
+                echo "<br>Rol: " . $objUser->getCodigoRol();
+                echo "<br>Nombre: " . $objUser->getNombreRol();
+                
+                // Crear un Objeto a partir de los métodos set
+                $objUser2 = new UserDto();
+                $objUser2->setCodigoRol(2);
+                $objUser2->setNombreRol("cliente");
+
+                // Mostrar Resultado
+                echo "<br>";
+                echo "<br>Objeto con métodos set";
+                echo "<br>Rol: " . $objUser2->getCodigoRol();
+                echo "<br>Nombre: " . $objUser2->getNombreRol();
+                */
+            }
         }
         /*
         // Configurar Usuario
