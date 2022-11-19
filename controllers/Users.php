@@ -1,9 +1,13 @@
 <?php    
 
     require_once "models/model_dto/UserDto.php";
+    require_once "models/model_dao/UserDao.php";
 
     class Users{
-        public function __construct(){}
+        private $userDao;
+        public function __construct(){
+            $this->userDao = new UserDao;
+        }
         public function index(){
             require_once "views/roles/admin/header.php";
             require_once "views/roles/admin/admin_main.view.php";
@@ -20,20 +24,12 @@
             }
             // Captura los Datos
             elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-
                 $userDto = new UserDto(
                     $_POST['rol_codigo'], 
                     $_POST['rol_nombre']
                 );
-                require_once "views/roles/admin/header.php";
-                
-                // Mostrar Resultado            
-                echo "<br>Crer Rol con el Constructor";
-                echo "<br>Rol: " . $userDto->getCodigoRol();
-                echo "<br>Nombre: " . $userDto->getNombreRol();
-
-
-                require_once "views/roles/admin/footer.php";
+                $this->userDao->createRol($userDto);
+                header("Location: ?c=Users");
 
                 /*
                 // Programar
