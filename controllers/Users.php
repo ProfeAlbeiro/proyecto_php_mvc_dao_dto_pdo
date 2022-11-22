@@ -81,8 +81,15 @@
                 );
                 $this->userDao->updateRolDao($userDto);
                 header("Location: ?c=Users&a=readRol");
-            }            
+            }           
+            
         }
+
+        // Eliminar Rol
+        public function deleteRol(){
+			$this->userDao->deleteRolDao($_GET['idRol']);
+			header('Location: ?c=Users&a=readRol');			
+		}
         
     }
 ?>

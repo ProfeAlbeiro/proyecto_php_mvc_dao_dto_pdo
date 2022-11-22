@@ -73,6 +73,42 @@
 				die($e->getMessage());
 			}
 		}
+
+		# Actualizar un Rol
+        public function updateRolDao($userDto){
+            try {
+				// Crear la Consulta
+				$sql = 'UPDATE ROLES SET
+							codigo_rol = :idRol,
+							nombre_rol = :nombreRol
+						WHERE codigo_rol = :idRol';
+
+				// Preparar la BBDD para la consulta
+				$dbh = $this->pdo->prepare($sql);
+
+				// Vincular los datos del objeto a la consulta de Inserción
+				$dbh->bindValue('idRol', $userDto->getCodigoRol());			
+				$dbh->bindValue('nombreRol', $userDto->getNombreRol());
+
+				// Ejecutar la consulta
+				$dbh->execute();
+                
+			} catch (Exception $e) {
+				die($e->getMessage());	
+			}
+        }
+
+		# Eliminar un Rol
+		public function deleteRolDao($idRol){
+			try {
+				$sql = 'DELETE FROM ROLES WHERE codigo_rol = :idRol';
+				$dbh = $this->pdo->prepare($sql);
+				$dbh->bindValue('idRol', $idRol);
+				$dbh->execute();
+			} catch (Exception $e) {
+				die($e->getMessage());
+			}
+		}
 		
 	}
 ?>
