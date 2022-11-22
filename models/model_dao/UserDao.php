@@ -49,6 +49,30 @@
 				die($e->getMessage());
 			}
 		}
+
+		# Obtener IdRol
+		public function getById($idRol){
+			try {
+				# Consulta
+				$sql = "SELECT * FROM ROLES WHERE codigo_rol=:idRol";
+				# Preparar la BBDD
+				$dbh = $this->pdo->prepare($sql);
+				# Vincular los datos
+				$dbh->bindValue('idRol', $idRol);
+				# Ejecutar la consulta
+				$dbh->execute();
+				# Crear un objeto del registro la BBDD
+				$rolDb = $dbh->fetch();
+				# Crear el objeto del modelo
+				$rol = new UserDto(
+					$rolDb['codigo_rol'],
+					$rolDb['nombre_rol'],					
+				);
+				return $rol;
+			} catch (Exception $e) {
+				die($e->getMessage());
+			}
+		}
 		
 	}
 ?>

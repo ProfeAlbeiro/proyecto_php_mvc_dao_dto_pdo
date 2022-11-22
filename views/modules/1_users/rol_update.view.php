@@ -29,9 +29,14 @@
                 <form id="formRolCreate" name="formRolCreate" class="card p-3 bg-dark text-white d-lg-flex justify-content-center w-100 border rounded p-2 needs-validation" action="?c=Users&a=readRol" method="post" novalidate>
                     <div class="form-row">
                         <div class="form-group col-md-12">
+                            <label for="rol_codigo">Código Rol</label>
+                            <input type="text" class="form-control" id="rol_codigo" placeholder="Código Rol" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}"
+							title="Ingrese Nombre(s) Válido(s)" value="<?php echo $rol->getCodigoRol(); ?>" required>
+                        </div>
+                        <div class="form-group col-md-12">
                             <label for="rol_nombre">Nombre Rol</label>
                             <input type="text" class="form-control" id="rol_nombre" placeholder="Nombre" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}"
-							title="Ingrese Nombre(s) Válido(s)" required>
+							title="Ingrese Nombre(s) Válido(s)" value="<?php echo $rol->getNombreRol(); ?>" required>
                         </div>
                     </div>                    
                         <input type="submit" id="submit-rol-create" class="btn btn-info mb-2" value="Enviar">
