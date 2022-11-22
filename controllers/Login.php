@@ -8,6 +8,11 @@
                 require_once "views/roles/business/footer.php";
             }
             elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
+                // Capturar Datos
+                // Validar los Datos
+                // Crear el Objeto
+                // Comprobar en la base de datos
+                // Redireccionar al Dashboard
                 header("Location: ?c=Dashboard");
             }
         }

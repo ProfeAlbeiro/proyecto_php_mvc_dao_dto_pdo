@@ -3,9 +3,9 @@
             <div class="col p-0">
                 <div aria-label="breadcrumb">
                     <ol class="breadcrumb rounded-0 m-0 p-2 bg-white">
-                        <li class="breadcrumb-item"><a href="?c=Dashboard">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="../0_mains/admin_main.html">Inicio</a></li>
                         <li class="breadcrumb-item">Módulo Usuarios</li>
-                        <li class="breadcrumb-item active" aria-current="page">Consultar Roles</li>
+                        <li class="breadcrumb-item active" aria-current="page">Consultar Usuarios</li>
                     </ol>
                 </div>
             </div>
@@ -17,9 +17,9 @@
                 <div class="col-6 p-0 d-flex justify-content-start align-items-center">
                     <h5 class="m-0">Consultar Roles</h5>
                 </div>
-                <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                    <a href="?c=Users&a=createRol" class="btn btn-light">Crear Rol</a>
-                </div>
+                <!-- <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                    <a href="user_create.html" class="btn btn-light">Crear Usuario</a>
+                </div> -->
             </div>
         </div>
 
@@ -29,49 +29,27 @@
                 <table id="data-tables" class="display nowrap" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Rol</th>                            
+                            <th>Código</th>
+                            <th>Nombre</th>                            
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>admin</td>                            
-                            <td class="tabla-acciones">
-                                <a class="tabla-edit" href="?c=Users&a=updateRol"><i class="fas fa-edit"></i></a>
-                                <a class="tabla-delete" href="#" onclick="deleteRol()"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>persona</td>                            
-                            <td class="tabla-acciones">
-                                <a class="tabla-edit" href="?c=Users&a=updateRol"><i class="fas fa-edit"></i></a>
-                                <a class="tabla-delete" href="#" onclick="deleteRol()"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>cliente</td>                            
-                            <td class="tabla-acciones">
-                                <a class="tabla-edit" href="?c=Users&a=updateRol"><i class="fas fa-edit"></i></a>
-                                <a class="tabla-delete" href="#" onclick="deleteRol()"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>empleado</td>                            
-                            <td class="tabla-acciones">
-                                <a class="tabla-edit" href="?c=Users&a=updateRol"><i class="fas fa-edit"></i></a>
-                                <a class="tabla-delete" href="#" onclick="deleteRol()"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
+                        <?php foreach ($roles as $rol): ?>
+                            <tr>
+                                <td><?php echo $rol->getCodigoRol(); ?></td>
+                                <td><?php echo $rol->getNombreRol(); ?></td>
+                                <td class="tabla-acciones">
+                                    <a class="tabla-edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="tabla-delete" href="" ><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>                        
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Id</th>
-                            <th>Rol</th>                            
+                            <th>Código</th>
+                            <th>Nombre</th>                            
                             <th>Acciones</th>
                         </tr>
                     </tfoot>
