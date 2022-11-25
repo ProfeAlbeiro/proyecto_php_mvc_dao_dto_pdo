@@ -124,12 +124,12 @@
                                             </li>
 											<li class="list-group-item p-0 bg-light">
                                                 <a href="?c=Users&a=createRol" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">CrearRol</a>
-                                            </li>                                            
-                                            <li class="list-group-item p-0 bg-light">
-                                                <a href="?c=Users&a=createUser" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear Usuario</a>
                                             </li>
 											<li class="list-group-item p-0 bg-light">
                                                 <a href="?c=Users&a=readRol" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar Roles</a>
+                                            </li>
+                                            <li class="list-group-item p-0 bg-light">
+                                                <a href="?c=Users&a=createUser" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear Usuario</a>
                                             </li>
                                             <li class="list-group-item p-0 bg-light">
                                                 <a href="?c=Users&a=readUser" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar Usuarios</a>
