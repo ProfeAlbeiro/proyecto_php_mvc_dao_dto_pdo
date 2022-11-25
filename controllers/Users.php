@@ -83,6 +83,7 @@
                     $_POST['user_apellidos'],
                     $_POST['user_correo']
                 );
+                print_r($userDto);
                 // $this->rolDao->createUser($userDto);
                 // header("Location: ?c=Users&a=readUser");
             }
