@@ -1,12 +1,12 @@
 <?php    
 
-    require_once "models/model_dto/UserDto.php";
-    require_once "models/model_dao/UserDao.php";
+    require_once "models/model_dto/RolDto.php";
+    require_once "models/model_dao/RolDao.php";
 
     class Users{
         private $userDao;
         public function __construct(){
-            $this->userDao = new UserDao;
+            $this->userDao = new RolDao;
         }
         public function index(){
             require_once "views/roles/admin/header.php";

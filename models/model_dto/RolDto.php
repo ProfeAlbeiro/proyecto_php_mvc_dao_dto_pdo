@@ -1,6 +1,6 @@
 <?php
 
-    class UserDto{
+    class RolDto{
         
         /* ATRIBUTOS */        
         private $codigoRol;

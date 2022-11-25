@@ -1,5 +1,5 @@
 <?php 
-	class UserDao{
+	class RolDao{
 		private $pdo;
 		public function __construct(){
 			try {
