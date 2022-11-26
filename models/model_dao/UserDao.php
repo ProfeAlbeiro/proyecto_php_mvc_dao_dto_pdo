@@ -1,5 +1,5 @@
 <?php 
-	class RolDao{
+	class UserDao{
 		private $pdo;
 		public function __construct(){
 			try {
@@ -9,86 +9,92 @@
 			}
 		}		
 
-		# Registrar o Crear Rol
-		public function createRol($rolDto){
+		# Registrar o Crear User
+		public function createUser($UserDto){
 			try {
 				// Crear la Consulta
-				$sql = 'INSERT INTO ROLES VALUES (
+				$sql = 'INSERT INTO USUARIOS VALUES (
 							:idRol,
-							:nombreRol
+							:codigoUser,
+							:nombresUser,
+							:apellidosUser,							
+							:correoUser
 						)';
 				// Preparar la BBDD para la consulta
 				$dbh = $this->pdo->prepare($sql);
 				// Vincular los datos del objeto a la consulta de Inserción
-				$dbh->bindValue('idRol',$rolDto->getCodigoRol());			
-				$dbh->bindValue('nombreRol',$rolDto->getNombreRol());
+				$dbh->bindValue('idRol',$UserDto->getCodigoRol());			
+				$dbh->bindValue('codigoUser',$UserDto->getCodigoUser());
+				$dbh->bindValue('nombresUser',$UserDto->getNombresUser());
+				$dbh->bindValue('apellidosUser',$UserDto->getApellidosUser());
+				$dbh->bindValue('correoUser',$UserDto->getCorreoUser());
 				// Ejecutar la consulta
 				$dbh->execute();
 			} catch (Exception $e) {
 				die($e->getMessage());	
 			}
 		}
-
-		# Consultar Roles
-		public function readRolDao(){
+		/*
+		# Consultar Useres
+		public function readUserDao(){
 			try {
 				// Crear un Arreglo Vacío
-				$rolList = [];
+				$UserList = [];
 				// Asignar una consulta al atributo $sql
-				$sql = 'SELECT * FROM ROLES';
+				$sql = 'SELECT * FROM UserES';
 				// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
 				$dbh = $this->pdo->query($sql);
-				foreach ($dbh->fetchAll() as $rol) {
-					$rolList[] = new RolDto(
-						$rol['codigo_rol'],
-						$rol['nombre_rol']						
+				foreach ($dbh->fetchAll() as $User) {
+					$UserList[] = new UserDto(
+						$User['codigo_User'],
+						$User['nombre_User']						
 					);
 				}
-				return $rolList;
+				return $UserList;
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
 		}
 
-		# Obtener IdRol
-		public function getById($idRol){
+		# Obtener IdUser
+		public function getById($idUser){
 			try {
 				# Consulta
-				$sql = "SELECT * FROM ROLES WHERE codigo_rol=:idRol";
+				$sql = "SELECT * FROM UserES WHERE codigo_User=:idUser";
 				# Preparar la BBDD
 				$dbh = $this->pdo->prepare($sql);
 				# Vincular los datos
-				$dbh->bindValue('idRol', $idRol);
+				$dbh->bindValue('idUser', $idUser);
 				# Ejecutar la consulta
 				$dbh->execute();
 				# Crear un objeto del registro la BBDD
-				$rolDb = $dbh->fetch();
+				$UserDb = $dbh->fetch();
 				# Crear el objeto del modelo
-				$rol = new RolDto(
-					$rolDb['codigo_rol'],
-					$rolDb['nombre_rol'],					
+				$User = new UserDto(
+					$UserDb['codigo_User'],
+					$UserDb['nombre_User'],					
 				);
-				return $rol;
+				return $User;
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
 		}
 
-		# Actualizar un Rol
-        public function updateRolDao($userDto){
+		# Actualizar un User
+        public function updateUserDao($userDto){
             try {
 				// Crear la Consulta
-				$sql = 'UPDATE ROLES SET
-							codigo_rol = :idRol,
-							nombre_rol = :nombreRol
-						WHERE codigo_rol = :idRol';
+				$sql = 'UPDATE UserES SET
+							codigo_User = :idUser,
+							nombre_User = :nombreUser
+						WHERE codigo_User = :idUser';
 
 				// Preparar la BBDD para la consulta
 				$dbh = $this->pdo->prepare($sql);
 
 				// Vincular los datos del objeto a la consulta de Inserción
-				$dbh->bindValue('idRol', $userDto->getCodigoRol());			
-				$dbh->bindValue('nombreRol', $userDto->getNombreRol());
+				$dbh->bindValue('idUser', $userDto->getCodigoUser());			
+				$dbh->bindValue('nombreUser', $userDto->getNombreUser());
 
 				// Ejecutar la consulta
 				$dbh->execute();
@@ -98,17 +104,17 @@
 			}
         }
 
-		# Eliminar un Rol
-		public function deleteRolDao($idRol){
+		# Eliminar un User
+		public function deleteUserDao($idUser){
 			try {
-				$sql = 'DELETE FROM ROLES WHERE codigo_rol = :idRol';
+				$sql = 'DELETE FROM UserES WHERE codigo_User = :idUser';
 				$dbh = $this->pdo->prepare($sql);
-				$dbh->bindValue('idRol', $idRol);
+				$dbh->bindValue('idUser', $idUser);
 				$dbh->execute();
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
 		}
-		
+		*/
 	}
 ?>

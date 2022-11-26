@@ -3,13 +3,14 @@
     require_once "models/model_dto/RolDto.php";
     require_once "models/model_dto/UserDto.php";
     require_once "models/model_dao/RolDao.php";
+    require_once "models/model_dao/UserDao.php";
 
     class Users{
         
         private $userDao;
         public function __construct(){
             $this->rolDao = new RolDao;
-            // $this->userDao = new UserDao;
+            $this->userDao = new UserDao;
         }
         // Cargar página inicial (puede ser el módulo)
         public function index(){
@@ -82,10 +83,9 @@
                     $_POST['user_nombres'],
                     $_POST['user_apellidos'],
                     $_POST['user_correo']
-                );
-                print_r($userDto);
-                // $this->rolDao->createUser($userDto);
-                // header("Location: ?c=Users&a=readUser");
+                );                
+                $this->userDao->createUser($userDto);
+                header("Location: ?c=Dashboard");
             }
         }
         /*

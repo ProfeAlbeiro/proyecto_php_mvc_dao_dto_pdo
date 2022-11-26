@@ -72,8 +72,6 @@
         public function getCorreoUser(){
             return $this->correoUser;
         }
-
-
     }
 
 ?>
