@@ -21,7 +21,6 @@
 		}
         // Constructor Vacío
         public function __construct0(){}
-
         
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         

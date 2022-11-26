@@ -62,32 +62,32 @@
                         </div>
                         <div id="doc_identidad_group" class="form-group col-md-6 ocultar-control">
                             <label for="user_doc_identidad">Documento de Identidad</label>
-                            <input type="number" class="form-control" id="user_doc_identidad" placeholder="123456789" min="100000" max="10000000000000" title="Ingrese un documento válido">
+                            <input type="number" name="credential_identificacion" class="form-control" id="user_doc_identidad" placeholder="123456789" min="100000" max="10000000000000" title="Ingrese un documento válido">
                         </div>
                         <div id="contrasena_us_group" class="form-group col-md-6 ocultar-control">
                             <label for="user_contrasena">Contraseña</label>
-                            <input type="password" class="form-control" id="user_contrasena" placeholder="Entre 5 y 8 caracteres"
+                            <input type="password" name="credential_pass" class="form-control" id="user_contrasena" placeholder="Entre 5 y 8 caracteres"
                             pattern="[A-Za-z0-9]{5,8}" title="Entre 5 y 8 caracteres">
                         </div>
                         <div id="confirmacion_group" class="form-group col-md-6 ocultar-control">
                             <label for="user_confirmacion">Confirmación</label>
-                            <input type="password" class="form-control" id="user_confirmacion" placeholder="Confirmar contraseña" pattern="[A-Za-z0-9]{5,8}" title="Entre 5 y 8 caracteres">
+                            <input type="password" name="credential_confirm" class="form-control" id="user_confirmacion" placeholder="Confirmar contraseña" pattern="[A-Za-z0-9]{5,8}" title="Entre 5 y 8 caracteres">
                         </div>
                         <div id="fechaNac_group" class="form-group col-md-6 ocultar-control">
                             <label for="user_fecha_nac">Fecha Nacimiento</label>
-                            <input type="date" class="form-control" id="user_fecha_nac" placeholder="Fecha de Nacimiento">
+                            <input type="date" name="credential_fecha_nac" class="form-control" id="user_fecha_nac" placeholder="Fecha de Nacimiento">
                         </div>                        
                         <div id="estado_group" class="form-group col-md-6 ocultar-control">
                             <label for="user_estado">Estado</label>
-                            <select class="form-control" id="user_estado">
+                            <select name="credential_estado" class="form-control" id="user_estado">
                                 <option></option>
-                                <option>activo</option>
-                                <option>inactivo</option>
+                                <option value="1">activo</option>
+                                <option value="0">inactivo</option>
                             </select>
                         </div>
                         <div id="salario_group" class="form-group col-md-6 ocultar-control">
                             <label for="user_salario">Salario</label>
-                            <input type="number" class="form-control text-right" id="user_salario" placeholder="1300000" min="1500000" max="5000000" title="Ingrese un documento válido">
+                            <input type="number" name="credential_salario" class="form-control text-right" id="user_salario" placeholder="1300000" min="1500000" max="5000000" title="Ingrese un documento válido">
                         </div>
                     </div>
                     <input type="submit" id="submit-user-create" class="btn btn-info mb-2" value="Enviar">

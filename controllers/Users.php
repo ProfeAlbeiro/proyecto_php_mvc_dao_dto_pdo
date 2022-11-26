@@ -90,13 +90,12 @@
                     header("Location: ?c=Users&a=readUser");
                 }
                 elseif ($_POST['rol_codigo'] == "1") {
-                    require_once "views/roles/admin/header.php";                    
+                    require_once "views/roles/admin/header.php";
                     $userDto->setFotoCredential($_POST["credential_foto"]);
-                    print_r($userDto);
-                    echo "<br>";
-                    echo "<br>" . $userDto->getCodigoRol();
-                    echo "<br>" . $userDto->getNombresUser();
-                    echo "<br>" . $userDto->getFotoCredential();
+                    $userDto->setIdentificacionCredential($_POST["credential_identificacion"]);
+                    $userDto->setFechaIngresoCredential(date("Y"));
+                    $userDto->setPassCredential($_POST["credential_pass"]);
+                    $userDto->setEstadoCredential($_POST["credential_estado"]);
                     require_once "views/roles/admin/footer.php";
                 }
                 elseif ($_POST['rol_codigo'] == "3") {
