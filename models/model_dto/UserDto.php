@@ -4,6 +4,7 @@
         
         /* ATRIBUTOS */        
         private $codigoRol;
+        private $nombreRol;
         private $codigoUser;
         private $nombresUser;
         private $apellidosUser;
@@ -19,12 +20,22 @@
 				call_user_func_array(array($this, $f), $a);
 			}
 		}
-        // Constructor Vacío
+        // Constructor: Vacío
         public function __construct0(){}
 
-        // Constructor Total
+        // Constructor: Sin Nombre Rol
         public function __construct5($codigoRol,$codigoUser,$nombresUser,$apellidosUser,$correoUser){
 			$this->codigoRol = $codigoRol;
+			$this->codigoUser = $codigoUser;
+			$this->nombresUser = $nombresUser;
+			$this->apellidosUser = $apellidosUser;
+			$this->correoUser = $correoUser;			
+		}
+
+        // Constructor: Con Nombre Rol
+        public function __construct6($codigoRol,$nombreRol,$codigoUser,$nombresUser,$apellidosUser,$correoUser){
+			$this->codigoRol = $codigoRol;
+			$this->nombreRol = $nombreRol;
 			$this->codigoUser = $codigoUser;
 			$this->nombresUser = $nombresUser;
 			$this->apellidosUser = $apellidosUser;
@@ -39,6 +50,14 @@
         }
         public function getCodigoRol(){
             return $this->codigoRol;
+        }
+
+        // Nombre Rol
+        public function setNombreRol($nombreRol){
+            $this->nombreRol = $nombreRol;
+        }
+        public function getNombreRol(){
+            return $this->nombreRol;
         }
 
         // Código Usuario

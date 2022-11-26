@@ -30,22 +30,21 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="user_perfil">Perfil</label>
-                            <select name="rol_codigo" class="form-control class-perfil" id="user_perfil" 
-							title="Ingrese Un Perfil Válido" required>                                
+                            <select name="rol_codigo" id="user_perfil" class="form-control class-perfil" title="Ingrese Un Perfil Válido" required>                                
                                 <option value="2">usuario</option>
                                 <option value="3">cliente</option>
                                 <option value="4">empleado</option>
                                 <option value="1">administrador</option>
                             </select>
                         </div>
-                        <div id="foto_group" class="form-group col-md-6 ocultar-control">
-                            <label for="user_foto">Foto</label>
-                            <input type="file" class="form-control p-1" id="user_foto">
-                        </div>
                         <div class="form-group col-md-6">
                             <label for="">Código Usuario</label>
-                            <input name="user_codigo" type="text" class="form-control" id="" placeholder="Código Usuario">
+                            <input name="user_codigo" id="user_codigo" type="text" class="form-control" placeholder="Código Usuario" minlength="5" maxlength="15" title="Ingrese un código válido" required>
                         </div>
+                        <div id="foto_group" class="form-group col-md-6 ocultar-control">
+                            <label for="user_foto">Foto</label>
+                            <input type="file" name="credential_foto" class="form-control p-1" id="user_foto">
+                        </div>                        
                         <div class="form-group col-md-6">
                             <label for="user_nombres">Nombres</label>
                             <input name="user_nombres" type="text" class="form-control" id="user_nombres" placeholder="Nombres" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}"

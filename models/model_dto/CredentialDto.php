@@ -1,5 +1,5 @@
 <?php
-    // require_once "models/model_dto/UserDto.php";
+    
     class CredentialDto extends UserDto{
         
         /* ATRIBUTOS */        
@@ -22,15 +22,7 @@
         // Constructor Vacío
         public function __construct0(){}
 
-        // Constructor Total
-        // public function __construct5($codigoRol,$codigoUser,$nombresUser,$apellidosUser,$correoUser){
-		// 	$this->codigoRol = $codigoRol;
-		// 	$this->codigoUser = $codigoUser;
-		// 	$this->nombresUser = $nombresUser;
-		// 	$this->apellidosUser = $apellidosUser;
-		// 	$this->correoUser = $correoUser;			
-		// }
-
+        
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         
         // Foto Credencial

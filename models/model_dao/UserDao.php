@@ -10,10 +10,10 @@
 		}		
 
 		# Registrar o Crear User
-		public function createUser($UserDto){
+		public function createUserDao($UserDto){
 			try {
 				// Crear la Consulta
-				$sql = 'INSERT INTO USUARIOS VALUES (
+				$sql = 'CALL pa_registrar_usuario (
 							:idRol,
 							:codigoUser,
 							:nombresUser,
@@ -34,28 +34,33 @@
 				die($e->getMessage());	
 			}
 		}
-		/*
-		# Consultar Useres
+		
+		# Consultar Usuarios
 		public function readUserDao(){
 			try {
 				// Crear un Arreglo Vacío
-				$UserList = [];
+				$userList = [];
 				// Asignar una consulta al atributo $sql
-				$sql = 'SELECT * FROM UserES';
+				$sql = 'SELECT * FROM VW_USUARIOS;';
 				// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
 				$dbh = $this->pdo->query($sql);
-				foreach ($dbh->fetchAll() as $User) {
-					$UserList[] = new UserDto(
-						$User['codigo_User'],
-						$User['nombre_User']						
+				foreach ($dbh->fetchAll() as $user) {
+					$userList[] = new UserDto(
+						$user['codigo_rol'],
+						$user['nombre_rol'],						
+						$user['codigo_user'],						
+						$user['nombres_user'],						
+						$user['apellidos_user'],						
+						$user['correo_user']						
 					);
 				}
-				return $UserList;
+				return $userList;
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
 		}
 
+		/*
 		# Obtener IdUser
 		public function getById($idUser){
 			try {

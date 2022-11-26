@@ -29,7 +29,8 @@
                             <li class="list-group-item"><a href="?c=Users&a=createRol" class="card-link">Crear Rol</a></li>
                             <li class="list-group-item"><a href="?c=Users&a=readRol" class="card-link">Consultar Roles</a></li>
                             <li class="list-group-item"><a href="?c=Users&a=createUser" class="card-link">Crear usuario</a></li>
-                            <li class="list-group-item"><a href="?c=Users&a=readUser" class="card-link">Consultar Usuarios</a></li>
+                            <li class="list-group-item"><a href="?c=Users&a=readUser" class="card-link">Usuarios sin Credenciales</a></li>
+                            <li class="list-group-item"><a href="?c=Users&a=readUserCred" class="card-link">Usuarios con Credenciales</a></li>
                         </ul>
                     </div>
                 </div>

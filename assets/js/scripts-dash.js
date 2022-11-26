@@ -122,7 +122,7 @@ function perfilar() {
     let select = document.getElementById('user_perfil');
     let user = this.options[select.selectedIndex];
 
-    if (user.text === "usuario") {
+    if (user.text === "usuario") {        
         $('#user_foto').removeAttr("required");
         $('#user_doc_identidad').removeAttr("required");
         $('#user_contrasena').removeAttr("required");
@@ -313,6 +313,7 @@ function validarUser() {
     let patronCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     let patronTexto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;
     let userPerfil = document.getElementById('user_perfil').value.toUpperCase();
+    let userCodigo = document.getElementById('user_codigo').value;
     let userNombres = document.getElementById('user_nombres').value;
     let userCorreo = document.getElementById('user_correo').value;
     let userApellidos = document.getElementById('user_apellidos').value;
@@ -328,8 +329,33 @@ function validarUser() {
         form.addEventListener('submit', function (event) {
             event.preventDefault();
             event.stopPropagation();
-            // Foto: No vacío
-            if (form.checkValidity() === false && userFoto == "" && (userPerfil == "CLIENTE" || userPerfil == "EMPLEADO" || userPerfil == "ADMINISTRADOR")) {
+
+            // Código: Vacío
+            if (form.checkValidity() === false && userCodigo === "") {
+                swal({
+                    title: "Verifique el campo Código",
+                    text: "El código NO puede estar vacío",
+                    icon: "error",
+                    button: "Aceptar",
+                })
+                    .then((value) => {
+                        document.getElementById('user_codigo').focus();
+                    });
+            }
+            // Código: Entre 5 y 15 caracteres
+            else if (form.checkValidity() === false && (userCodigo.length < 5 || userCodigo.length > 15)) {
+                swal({
+                    title: "Verifique el campo Nombres",
+                    text: "Los Nombres deben contener entre 2 y 50 caracteres",
+                    icon: "error",
+                    button: "Aceptar",
+                })
+                    .then((value) => {
+                        document.getElementById('user_codigo').focus();
+                    });
+            }
+            // Foto: Vacío
+            else if (form.checkValidity() === false && userFoto == "" && (userPerfil == "CLIENTE" || userPerfil == "EMPLEADO" || userPerfil == "ADMINISTRADOR")) {
                 swal({
                     title: "Verifique el campo Foto",
                     text: "La Foto NO puede estar vacíos",
@@ -340,7 +366,7 @@ function validarUser() {
                         document.getElementById('user_foto').focus();
                     });
             }
-            // Nombres: No vacío
+            // Nombres: Vacío
             else if (form.checkValidity() === false && userNombres === "") {
                 swal({
                     title: "Verifique el campo Nombres",
@@ -364,7 +390,7 @@ function validarUser() {
                         document.getElementById('user_nombres').focus();
                     });
             }
-            // Nombre: Entre 2 y 5 caracteres
+            // Nombre: Entre 2 y 50 caracteres
             else if (form.checkValidity() === false && (userNombres.length < 2 || userNombres.length > 50)) {
                 swal({
                     title: "Verifique el campo Nombres",

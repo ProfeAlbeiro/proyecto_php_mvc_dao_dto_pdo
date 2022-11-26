@@ -132,7 +132,10 @@
                                                 <a href="?c=Users&a=createUser" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Crear Usuario</a>
                                             </li>
                                             <li class="list-group-item p-0 bg-light">
-                                                <a href="?c=Users&a=readUser" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Consultar Usuarios</a>
+                                                <a href="?c=Users&a=readUser" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Usuarios sin Credenciales</a>
+                                            </li>
+                                            <li class="list-group-item p-0 bg-light">
+                                                <a href="?c=Users&a=readUserCred" class="card-link d-block p-2 px-lg-3 py-lg-1 ocul-panel">Usuarios con Credenciales</a>
                                             </li>
                                         </ul>
                                     </div>

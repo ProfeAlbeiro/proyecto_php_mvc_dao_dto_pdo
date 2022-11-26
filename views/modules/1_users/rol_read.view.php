@@ -17,9 +17,9 @@
                 <div class="col-6 p-0 d-flex justify-content-start align-items-center">
                     <h5 class="m-0">Consultar Roles</h5>
                 </div>
-                <!-- <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                    <a href="user_create.html" class="btn btn-light">Crear Usuario</a>
-                </div> -->
+                <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                    <a href="?c=Users&a=createRol" class="btn btn-light">Crear Rol</a>
+                </div>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
                                     <a class="tabla-delete" href="?c=Users&a=deleteRol&idRol=<?php echo $rol->getCodigoRol(); ?>" ><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
-                        <?php endforeach; ?>                        
+                        <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                         <tr>
