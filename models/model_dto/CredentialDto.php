@@ -1,5 +1,5 @@
 <?php
-    
+
     require_once "models/model_dto/UserDto.php";
 
     class CredentialDto extends UserDto{
@@ -15,12 +15,12 @@
         
         // Constructor de Constructores
 		public function __construct(){
-            try {
-				$this->pdo = DataBase::connection();				
-			} catch (Exception $e) {
-				die($e->getMessage());
+			$a = func_get_args();
+			$i = func_num_args();
+			if (method_exists($this, $f='__construct'.$i)) {
+				call_user_func_array(array($this, $f), $a);
 			}
-        }        
+		}
         
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         

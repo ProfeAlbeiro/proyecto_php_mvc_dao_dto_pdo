@@ -84,8 +84,8 @@
                     $_POST['user_apellidos'],
                     $_POST['user_correo']
                 );                
-                
                 if ($userDto->getCodigoRol() == "1" || $userDto->getCodigoRol() == "3" || $userDto->getCodigoRol() == "4") {                    
+                    /*
                     if ($_POST['rol_codigo'] == "1") {
                         require_once "views/roles/admin/header.php";
                         echo "Soy un Administrador <br>";
@@ -109,8 +109,9 @@
                     }
                     // $this->userDao->createUserDao($userDto);
                     // header("Location: ?c=Users&a=readUser");
+                    */
                 } else {
-                    // $this->userDao->createUserDao($userDto);
+                    $this->userDao->createUserDao($userDto);
                     header("Location: ?c=Users&a=readUser");
                 }                
                                 
@@ -119,12 +120,12 @@
         
         // Consultar Usuarios sin Credenciales
         public function readUser(){
-            // $users = $this->userDao->readUserDao();            
+            $users = $this->userDao->readUserDao();            
             require_once "views/roles/admin/header.php";            
             require_once "views/modules/1_users/user_read.view.php";            
             require_once "views/roles/admin/footer.php";
         }
-
+        /*
         // Consultar Usuarios con Credenciales
         public function readUserCred(){
             // $users = $this->userDao->readUserDao();            
@@ -134,7 +135,7 @@
             require_once "views/roles/admin/footer.php";
         }
 
-        /*
+        
         // Actualizar Usuario
         public function updateUser(){
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {

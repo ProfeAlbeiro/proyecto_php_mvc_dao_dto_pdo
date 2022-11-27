@@ -1,10 +1,10 @@
 <?php 
-
+	
 	require_once "models/model_dao/UserDao.php";
 
 	class CredentialDao extends UserDao{
 		
-		public function __construct(){}
+		
 
 		# Registrar o Crear Administrador
 		/*
