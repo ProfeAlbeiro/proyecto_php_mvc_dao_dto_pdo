@@ -355,7 +355,7 @@ function validarUser() {
                     });
             }
             // Foto: Vacío
-            else if (form.checkValidity() === false && userFoto == "" && (userPerfil == "CLIENTE" || userPerfil == "EMPLEADO" || userPerfil == "ADMINISTRADOR")) {
+            else if (form.checkValidity() === false && userFoto == "" && (userPerfil == 3 || userPerfil == 4 || userPerfil == 1)) {
                 swal({
                     title: "Verifique el campo Foto",
                     text: "La Foto NO puede estar vacíos",

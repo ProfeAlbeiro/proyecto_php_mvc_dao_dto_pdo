@@ -1,7 +1,7 @@
 <?php 
 	class UserDao{
 		
-		private $pdo;
+		protected $pdo;
 		public function __construct(){
 			try {
 				$this->pdo = DataBase::connection();				

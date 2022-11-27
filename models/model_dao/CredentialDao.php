@@ -6,8 +6,7 @@
 		
 		
 
-		# Registrar o Crear Administrador
-		/*
+		# Registrar o Crear Administrador		
 		public function createAdminDao($userDto){
 			try {
 				// Crear la Consulta
@@ -31,18 +30,18 @@
 				$dbh->bindValue('nombresUser',$userDto->getNombresUser());
 				$dbh->bindValue('apellidosUser',$userDto->getApellidosUser());
 				$dbh->bindValue('correoUser',$userDto->getCorreoUser());
-				$dbh->bindValue('fotoCred',$userDto->getCorreoUser());
-				$dbh->bindValue('identificacionCred',$userDto->getCorreoUser());
-				$dbh->bindValue('fechaIngresoCred',$userDto->getCorreoUser());
-				$dbh->bindValue('passCred',$userDto->getCorreoUser());
-				$dbh->bindValue('estadoCred',$userDto->getCorreoUser());
+				$dbh->bindValue('fotoCred',$userDto->getFotoCredential());
+				$dbh->bindValue('identificacionCred',$userDto->getIdentificacionCredential());
+				$dbh->bindValue('fechaIngresoCred',$userDto->getFechaIngresoCredential());
+				$dbh->bindValue('passCred',$userDto->getPassCredential());
+				$dbh->bindValue('estadoCred',$userDto->getEstadoCredential());
 				// Ejecutar la consulta
 				$dbh->execute();
 			} catch (Exception $e) {
 				die($e->getMessage());	
 			}
 		}
-		
+		/*
 		# Consultar Usuarios
 		public function readUserDao(){
 			try {

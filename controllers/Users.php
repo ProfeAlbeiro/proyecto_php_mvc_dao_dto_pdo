@@ -85,17 +85,14 @@
                     $_POST['user_correo']
                 );                
                 if ($userDto->getCodigoRol() == "1" || $userDto->getCodigoRol() == "3" || $userDto->getCodigoRol() == "4") {                    
-                    /*
-                    if ($_POST['rol_codigo'] == "1") {
-                        require_once "views/roles/admin/header.php";
-                        echo "Soy un Administrador <br>";
+                    if ($userDto->getCodigoRol() == "1") {                        
                         $userDto->setFotoCredential($_POST["credential_foto"]);
                         $userDto->setIdentificacionCredential($_POST["credential_identificacion"]);
                         $userDto->setFechaIngresoCredential(date("Y-m-d"));
                         $userDto->setPassCredential($_POST["credential_pass"]);
-                        $userDto->setEstadoCredential($_POST["credential_estado"]);
-                        print_r($userDto);
-                        require_once "views/roles/admin/footer.php";
+                        $userDto->setEstadoCredential($_POST["credential_estado"]);                        
+                        $this->userDao->createAdminDao($userDto);
+                        header("Location: ?c=Users&a=readUser");
                     }
                     elseif ($_POST['rol_codigo'] == "3") {
                         require_once "views/roles/admin/header.php";
@@ -107,9 +104,8 @@
                         echo "Soy un Vendedor";
                         require_once "views/roles/admin/footer.php";
                     }
-                    // $this->userDao->createUserDao($userDto);
+                    
                     // header("Location: ?c=Users&a=readUser");
-                    */
                 } else {
                     $this->userDao->createUserDao($userDto);
                     header("Location: ?c=Users&a=readUser");
