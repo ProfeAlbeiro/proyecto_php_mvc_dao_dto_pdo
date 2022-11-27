@@ -1,5 +1,6 @@
 <?php 
 	class UserDao{
+		
 		private $pdo;
 		public function __construct(){
 			try {
@@ -10,7 +11,7 @@
 		}		
 
 		# Registrar o Crear User
-		public function createUserDao($UserDto){
+		public function createUserDao($userDto){
 			try {
 				// Crear la Consulta
 				$sql = 'CALL pa_registrar_usuario (
@@ -23,11 +24,11 @@
 				// Preparar la BBDD para la consulta
 				$dbh = $this->pdo->prepare($sql);
 				// Vincular los datos del objeto a la consulta de Inserción
-				$dbh->bindValue('idRol',$UserDto->getCodigoRol());			
-				$dbh->bindValue('codigoUser',$UserDto->getCodigoUser());
-				$dbh->bindValue('nombresUser',$UserDto->getNombresUser());
-				$dbh->bindValue('apellidosUser',$UserDto->getApellidosUser());
-				$dbh->bindValue('correoUser',$UserDto->getCorreoUser());
+				$dbh->bindValue('idRol',$userDto->getCodigoRol());			
+				$dbh->bindValue('codigoUser',$userDto->getCodigoUser());
+				$dbh->bindValue('nombresUser',$userDto->getNombresUser());
+				$dbh->bindValue('apellidosUser',$userDto->getApellidosUser());
+				$dbh->bindValue('correoUser',$userDto->getCorreoUser());
 				// Ejecutar la consulta
 				$dbh->execute();
 			} catch (Exception $e) {

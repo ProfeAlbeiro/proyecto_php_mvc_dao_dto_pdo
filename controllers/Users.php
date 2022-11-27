@@ -1,23 +1,22 @@
 <?php    
 
-    require_once "models/model_dto/RolDto.php";
-    require_once "models/model_dto/UserDto.php";
-    require_once "models/model_dto/CredentialDto.php";
+    require_once "models/model_dto/RolDto.php";    
     require_once "models/model_dao/RolDao.php";
-    require_once "models/model_dao/UserDao.php";
+    require_once "models/model_dto/CredentialDto.php";    
+    require_once "models/model_dao/CredentialDao.php";
 
     class Users{
         
+        private $rolDao;
         private $userDao;
+
         public function __construct(){
             $this->rolDao = new RolDao;
-            $this->userDao = new UserDao;
+            $this->userDao = new CredentialDao;
         }
         // Cargar página inicial (puede ser el módulo)
         public function index(){
-            require_once "views/roles/admin/header.php";
-            require_once "views/roles/admin/admin_main.view.php";
-            require_once "views/roles/admin/footer.php";
+            header("Location: ?c=Dashboard");
         }
         // Crear Rol
         public function createRol(){                        
@@ -84,36 +83,43 @@
                     $_POST['user_nombres'],
                     $_POST['user_apellidos'],
                     $_POST['user_correo']
-                );
-                if ($_POST['rol_codigo'] == "2") {                    
-                    $this->userDao->createUserDao($userDto);
+                );                
+                
+                if ($userDto->getCodigoRol() == "1" || $userDto->getCodigoRol() == "3" || $userDto->getCodigoRol() == "4") {                    
+                    if ($_POST['rol_codigo'] == "1") {
+                        require_once "views/roles/admin/header.php";
+                        echo "Soy un Administrador <br>";
+                        $userDto->setFotoCredential($_POST["credential_foto"]);
+                        $userDto->setIdentificacionCredential($_POST["credential_identificacion"]);
+                        $userDto->setFechaIngresoCredential(date("Y-m-d"));
+                        $userDto->setPassCredential($_POST["credential_pass"]);
+                        $userDto->setEstadoCredential($_POST["credential_estado"]);
+                        print_r($userDto);
+                        require_once "views/roles/admin/footer.php";
+                    }
+                    elseif ($_POST['rol_codigo'] == "3") {
+                        require_once "views/roles/admin/header.php";
+                        echo "Soy un Cliente";
+                        require_once "views/roles/admin/footer.php";
+                    }
+                    elseif ($_POST['rol_codigo'] == "4") {
+                        require_once "views/roles/admin/header.php";
+                        echo "Soy un Vendedor";
+                        require_once "views/roles/admin/footer.php";
+                    }
+                    // $this->userDao->createUserDao($userDto);
+                    // header("Location: ?c=Users&a=readUser");
+                } else {
+                    // $this->userDao->createUserDao($userDto);
                     header("Location: ?c=Users&a=readUser");
-                }
-                elseif ($_POST['rol_codigo'] == "1") {
-                    require_once "views/roles/admin/header.php";
-                    $userDto->setFotoCredential($_POST["credential_foto"]);
-                    $userDto->setIdentificacionCredential($_POST["credential_identificacion"]);
-                    $userDto->setFechaIngresoCredential(date("Y"));
-                    $userDto->setPassCredential($_POST["credential_pass"]);
-                    $userDto->setEstadoCredential($_POST["credential_estado"]);
-                    require_once "views/roles/admin/footer.php";
-                }
-                elseif ($_POST['rol_codigo'] == "3") {
-                    require_once "views/roles/admin/header.php";
-                    echo "Soy un Cliente";
-                    require_once "views/roles/admin/footer.php";
-                }
-                elseif ($_POST['rol_codigo'] == "4") {
-                    require_once "views/roles/admin/header.php";
-                    echo "Soy un Vendedor";
-                    require_once "views/roles/admin/footer.php";
                 }                
+                                
             }
         }
         
         // Consultar Usuarios sin Credenciales
         public function readUser(){
-            $users = $this->userDao->readUserDao();            
+            // $users = $this->userDao->readUserDao();            
             require_once "views/roles/admin/header.php";            
             require_once "views/modules/1_users/user_read.view.php";            
             require_once "views/roles/admin/footer.php";
