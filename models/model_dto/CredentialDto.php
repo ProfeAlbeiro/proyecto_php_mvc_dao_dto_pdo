@@ -11,7 +11,7 @@
         private $passCredential;
         private $estadoCredential;
         
-        /* SOBRECARGA DE CONSTRUCTORES */
+        /* SOBRECARGA DE CONSTRUCTORES */        
         
         // Constructor de Constructores
 		public function __construct(){
@@ -22,6 +22,26 @@
 			}
 		}
         
+        // Constructor: del Login
+        public function __construct2($correoUser, $passCredential){
+			$this->correoUser = $correoUser;
+			$this->passCredential = $passCredential;
+		}
+
+        public function __construct11($codigoRol, $nombreRol, $codigoUser, $nombresUser, $apellidosUser, $correoUser, $fotoCredential, $identificacionCredential, $fechaIngresoCredential, $passCredential, $estadoCredential){
+			$this->codigoRol = $codigoRol;
+			$this->nombreRol = $nombreRol;
+			$this->codigoUser = $codigoUser;
+			$this->nombresUser = $nombresUser;
+			$this->apellidosUser = $apellidosUser;
+			$this->correoUser = $correoUser;
+			$this->fotoCredential = $fotoCredential;
+			$this->identificacionCredential = $identificacionCredential;
+			$this->fechaIngresoCredential = $fechaIngresoCredential;
+			$this->passCredential = $passCredential;
+			$this->estadoCredential = $estadoCredential;
+		}
+
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         
         // Foto Credencial

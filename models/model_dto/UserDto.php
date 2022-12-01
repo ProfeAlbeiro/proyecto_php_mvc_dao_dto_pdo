@@ -3,12 +3,12 @@
     class UserDto{
         
         /* ATRIBUTOS */        
-        private $codigoRol;
-        private $nombreRol;
-        private $codigoUser;
-        private $nombresUser;
-        private $apellidosUser;
-        private $correoUser;
+        protected $codigoRol;
+        protected $nombreRol;
+        protected $codigoUser;
+        protected $nombresUser;
+        protected $apellidosUser;
+        protected $correoUser;
         
         /* SOBRECARGA DE CONSTRUCTORES */
         

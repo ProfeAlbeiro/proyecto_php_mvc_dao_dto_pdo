@@ -4,7 +4,35 @@
 
 	class CredentialDao extends UserDao{
 		
-		
+		# Iniciar Sesión
+		public function login($userDto){
+			$sql = 'SELECT * FROM VW_CREDENTIAL WHERE
+				correo_user = :correo AND
+				pass_cred = sha1(:pass)';
+			$dbh = $this->pdo->prepare($sql);
+			$dbh->bindValue('correo', $userDto->getCorreoUser());
+			$dbh->bindValue('pass', $userDto->getPassCredential());
+			$dbh->execute();
+			$userDb = $dbh->fetch();
+			if ($userDb) {
+				$userDto = new CredentialDto(
+					$userDb['codigo_rol'],
+					$userDb['nombre_rol'],
+					$userDb['codigo_user'],
+					$userDb['nombres_user'],
+					$userDb['apellidos_user'],
+					$userDb['correo_user'],
+					$userDb['foto_cred'],
+					$userDb['identificacion_cred'],
+					$userDb['fecha_ingreso_cred'],
+					$userDb['pass_cred'],
+					$userDb['estado_cred']
+				);
+				return $userDto;
+			} else {
+				return false;
+			}			
+		}
 
 		# Registrar o Crear Administrador		
 		public function createAdminDao($userDto){
@@ -41,6 +69,7 @@
 				die($e->getMessage());	
 			}
 		}
+
 		/*
 		# Consultar Usuarios
 		public function readUserDao(){
