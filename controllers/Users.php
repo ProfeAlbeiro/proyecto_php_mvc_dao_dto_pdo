@@ -20,19 +20,19 @@
         }
         // Crear Rol
         public function createRol(){                        
-            // Muestra el Formulario
+            // Carga la vista del Formulario
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 require_once "views/roles/admin/header.php";
                 require_once "views/modules/1_users/rol_create.view.php";            
                 require_once "views/roles/admin/footer.php";
             }
-            // Captura los Datos
+            // Captura los Datos a través del Formulario
             if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $rolDto = new RolDto(
                     $_POST['rol_codigo'], 
                     $_POST['rol_nombre']
                 );
-                $this->rolDao->createRol($rolDto);
+                $this->rolDao->createRolDao($rolDto);
                 header("Location: ?c=Users&a=readRol");
             }
         }        
@@ -69,13 +69,13 @@
         
         // Crear Usuario
         public function createUser(){
-            // Muestra el Formulario
+            // Carga la vista del Formulario
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 require_once "views/roles/admin/header.php";
                 require_once "views/modules/1_users/user_create.view.php";            
                 require_once "views/roles/admin/footer.php";
             }
-            // Captura los Datos
+            // Captura los Datos a través del Formulario
             if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $userDto = new CredentialDto(
                     $_POST['rol_codigo'], 

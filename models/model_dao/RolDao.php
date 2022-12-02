@@ -10,7 +10,7 @@
 		}		
 
 		# Registrar o Crear Rol
-		public function createRol($rolDto){
+		public function createRolDao($rolDto){
 			try {
 				// Crear la Consulta
 				$sql = 'INSERT INTO ROLES VALUES (

@@ -36,6 +36,5 @@
             require_once "views/business/fullCalendar.view.php";
             require_once "views/roles/business/footer.php";
         }
-
     }
 ?>
