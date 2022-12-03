@@ -27,13 +27,14 @@
                 // Comprobar en la base de datos
                 $userDto = $this->userDao->login($userDto);
                 if ($userDto) {
-                    echo "El Usuario SI existe";
+                    echo "El Usuario SI tiene Credenciales<br>";
+                    print_r($userDto);
                     // if ($userDto->getEstadoCredential() == 1) {                        
                     //     // Redireccionar al Dashboard
                     //     header('Location: ?c=Dashboard');
                     // }
                 } else {
-                    echo "El Usuario NO existe";
+                    echo "El Usuario NO tiene Credenciales";
                 }
             }
         }
