@@ -1,12 +1,12 @@
 <?php
-
+    
     require_once "models/model_dto/CredentialDto.php";    
-    // require_once "models/model_dao/CredentialDao.php";
+    require_once "models/model_dao/CredentialDao.php";
 
     class Login{        
-        // private $userDao;
+        private $userDao;
         public function __construct(){            
-            // $this->userDao = new CredentialDao;
+            $this->userDao = new CredentialDao;
         }
         public function index(){
             // Cargar la Vista del Formulario
@@ -15,31 +15,26 @@
                 require_once "views/business/login.view.php";
                 require_once "views/roles/business/footer.php";
             }
-            // Cargar los Datos
+            // Capturar los Datos del Formulario
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                
+                // Validar los Datos
+                // Crear el Objeto
                 $userDto = new CredentialDto(
                     $_POST['correo'], 
                     $_POST['pass']
-                );
-                
-                print_r($userDto);
-                // $prueba = $this->userDao->login($this->userDto);
-                // if ($prueba) {
-                //     // print_r($prueba);
-                //     header('Location: ?c=Dashboard');
-                // } else {
-                    //     echo "El Usuario No existe";
-                // }
-                
-                
-                
-                // Capturar Datos
-                // Validar los Datos
-                // Crear el Objeto
+                );                
+                // print_r($userDto);
                 // Comprobar en la base de datos
-                // Redireccionar al Dashboard
-                // header("Location: ?c=Dashboard");
+                $userDto = $this->userDao->login($userDto);
+                if ($userDto) {
+                    echo "El Usuario SI existe";
+                    // if ($userDto->getEstadoCredential() == 1) {                        
+                    //     // Redireccionar al Dashboard
+                    //     header('Location: ?c=Dashboard');
+                    // }
+                } else {
+                    echo "El Usuario NO existe";
+                }
             }
         }
     }

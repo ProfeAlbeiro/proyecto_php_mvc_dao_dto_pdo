@@ -42,7 +42,7 @@
 				// Crear un Arreglo Vacío
 				$userList = [];
 				// Asignar una consulta al atributo $sql
-				$sql = 'SELECT * FROM VW_USUARIOS;';
+				$sql = 'SELECT * FROM VW_USUARIOS';
 				// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
 				$dbh = $this->pdo->query($sql);
 				foreach ($dbh->fetchAll() as $user) {

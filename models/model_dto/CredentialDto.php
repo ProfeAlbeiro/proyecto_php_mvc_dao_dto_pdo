@@ -22,15 +22,15 @@
 			}
 		}
         
-        // Constructor: del Login
+        // Constructor: Login
         public function __construct2($correoUser, $passCredential){
 			$this->correoUser = $correoUser;
 			$this->passCredential = $passCredential;
 		}
 
         public function __construct11($codigoRol, $nombreRol, $codigoUser, $nombresUser, $apellidosUser, $correoUser, $fotoCredential, $identificacionCredential, $fechaIngresoCredential, $passCredential, $estadoCredential){
-			$this->codigoRol = $codigoRol;
-			$this->nombreRol = $nombreRol;
+			$this->codigoRol = $codigoRol;			
+			$this->nombreRol = $nombreRol;			
 			$this->codigoUser = $codigoUser;
 			$this->nombresUser = $nombresUser;
 			$this->apellidosUser = $apellidosUser;

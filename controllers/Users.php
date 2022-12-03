@@ -90,7 +90,9 @@
                         $userDto->setIdentificacionCredential($_POST["credential_identificacion"]);
                         $userDto->setFechaIngresoCredential(date("Y-m-d"));
                         $userDto->setPassCredential($_POST["credential_pass"]);
-                        $userDto->setEstadoCredential($_POST["credential_estado"]);                        
+                        $userDto->setEstadoCredential($_POST["credential_estado"]);
+                        // print_r($userDto);
+                        // print_r($userDto->getIdentificacionCredential());
                         $this->userDao->createAdminDao($userDto);
                         header("Location: ?c=Users&a=readUser");
                     }
@@ -104,8 +106,6 @@
                         echo "Soy un Vendedor";
                         require_once "views/roles/admin/footer.php";
                     }
-                    
-                    // header("Location: ?c=Users&a=readUser");
                 } else {
                     $this->userDao->createUserDao($userDto);
                     header("Location: ?c=Users&a=readUser");
