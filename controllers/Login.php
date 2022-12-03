@@ -27,14 +27,15 @@
                 // Comprobar en la base de datos
                 $userDto = $this->userDao->login($userDto);
                 if ($userDto) {
-                    echo "El Usuario SI tiene Credenciales<br>";
-                    print_r($userDto);
-                    // if ($userDto->getEstadoCredential() == 1) {                        
-                    //     // Redireccionar al Dashboard
-                    //     header('Location: ?c=Dashboard');
-                    // }
+                    // Validar si es un Administrador Activo
+                    if ($userDto->getEstadoCredential() == 1) {                        
+                        // Redireccionar al Dashboard
+                        header('Location: ?c=Dashboard');
+                    } else {
+                        header('Location: ?c=Landing');
+                    }
                 } else {
-                    echo "El Usuario NO tiene Credenciales";
+                    header('Location: ?c=Landing');
                 }
             }
         }
