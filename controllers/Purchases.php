@@ -1,4 +1,5 @@
 <?php
+    session_start();
     class Purchases{
         public function __construct(){}
         public function index(){

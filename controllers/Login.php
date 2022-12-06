@@ -1,5 +1,5 @@
 <?php
-    
+    session_start();
     require_once "models/model_dto/CredentialDto.php";    
     require_once "models/model_dao/CredentialDao.php";
 
@@ -25,17 +25,19 @@
                 );                
                 // print_r($userDto);
                 // Comprobar en la base de datos
-                $userDto = $this->userDao->login($userDto);
+                $userDto = $this->userDao->login($userDto);                
                 if ($userDto) {
                     // Validar si es un Administrador Activo
                     if ($userDto->getEstadoCredential() == 1) {                        
                         // Redireccionar al Dashboard
+                        $userDto = serialize($userDto);
+                        $_SESSION['userDto'] = $userDto;
                         header('Location: ?c=Dashboard');
-                    } else {
-                        header('Location: ?c=Landing');
+                    } else {                        
+                        header('Location: ?');
                     }
-                } else {
-                    header('Location: ?c=Landing');
+                } else {                    
+                    header('Location: ?');
                 }
             }
         }

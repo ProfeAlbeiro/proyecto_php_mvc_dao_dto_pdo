@@ -1,4 +1,5 @@
 <?php
+    session_start();
     class Products{
         public function __construct(){}
         public function index(){
